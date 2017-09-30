@@ -1,0 +1,56 @@
+﻿{
+"version": "170001",
+"date":"2017.10.10 - 10.12",
+"days":"3",
+"name":{
+	"tc":"上海國際供熱、鍋爐、生物質能暨熱工設備展",
+	"sc":"上海国际供热、锅炉、生物质能暨热工设备展",
+	"en":"HEATEC"
+},
+"registration":"2017/10/07 23:59:00",
+"regiterLink":"www.heatecchina.com/",
+"regEndMessage":
+{
+	"tc":"觀眾預先登記已結束，請攜公司名片前往展會現場辦理登記手續。謝謝!",
+	"sc":"「2017 上海国际供热、锅炉、生物质能暨热工设备展」观众网上预登记已经结束！ 请于2017年10月10-12日观众登记时间（9:00-16:30）前往上海世博展览馆，进行微信观众现场登记。",
+	"en":"Visitor pre-registration is closed. Please bring your business cards to register at our onsite registration counters. Thank you! "
+},
+"functionpath":"www.heatecchina.com/apps/2017/functions/",
+"advertisement":{
+	"version":"0",
+	"files":["m1.txt"]
+},
+"floorplan":{
+	"version":"0",
+	"cmsID":"0",
+	"files":["FloorPlan.csv"]
+},
+"floorplanimages":{
+	"version":"0",
+	"files":["floorplanimages.txt"]
+},
+"event":{
+	"version":"0",
+	"cmsID":"0",
+	"files":["event_content.txt"]
+},
+"seminar":{
+	"version":"0",
+	"cmsID":"0",
+	"files":["SeminarInfo.csv","SeminarSpeaker.csv"]
+},
+"notification":{
+	"version":"0",
+	"files":["notification.txt"]
+},
+"exhibitorList":{
+	"version":"1",
+	"display":{
+		"hide":[1,1,0,1,1],
+		"tc":["全部參展商","按產品搜索","按展館搜索","按地區搜索","我的參展商"],
+		"sc":["全部参展商","按产品搜索","按展馆搜索","按地区搜索","我的参展商"],
+		"en":["All Exhibitors","Search by Product","Search by Hall","Search by Region","My Exhibitor"]
+	}
+}
+}
+

@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "760630188367",
+    "project_id": "firebase-cps17"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760630188367:android:824d973cba880f90",
+        "android_client_info": {
+          "package_name": "com.adsale.ChinaPlas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXwQ_qBENjx9BwZrKyH29kVvu1LfcVsW8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-27731363-22"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

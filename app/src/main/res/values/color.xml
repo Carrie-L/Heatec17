@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="text_black">#FF4C3B3B</color>
+    <color name="dark_gray">#5d5657</color>
+
+    <!--  -->
+    <color name="tabBg">#626161</color>
+    <color name="tabBg_sel">#afaeae</color>
+
+    <!--RGB(,,)  -->
+    <color name="btn_Color">#049FAA</color>
+    
+    <color name="grey">#BEBEBE</color>
+    
+    
+    
+    
+
+</resources>

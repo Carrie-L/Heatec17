@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <LinearLayout
+        android:id="@+id/lyScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.adsale.HEATEC.view.DtlItemView
+            android:id="@+id/dtlBooth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.adsale.HEATEC.view.DtlItemView
+            android:id="@+id/dtlAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.adsale.HEATEC.view.DtlItemView
+            android:id="@+id/dtlEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.adsale.HEATEC.view.DtlItemView
+            android:id="@+id/dtlTel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.adsale.HEATEC.view.DtlItemView
+            android:id="@+id/dtlTel1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.adsale.HEATEC.view.DtlItemView
+            android:id="@+id/dtlFax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.adsale.HEATEC.view.DtlItemView
+            android:id="@+id/dtlWebsite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtIndustryTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/tabBg"
+            android:padding="5dp"
+            android:text="@string/category"
+            android:textColor="#fff"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="activity"
+            type="com.adsale.HEATEC.base.BaseActivity" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/imgBarTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/inner_bar"
+            fresco:viewAspectRatio="@{activity.topViewAspectRatio}" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bar">
+
+            <ImageView
+                android:id="@+id/txtBarBack"
+                android:layout_width="44dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:onClick="@{() -> activity.back()}"
+                android:scaleType="centerInside"
+                android:src="@drawable/btn_back"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@+id/txtBarHome"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:onClick="@{() -> activity.home()}"
+                android:scaleType="centerInside"
+                android:src="@drawable/bttn_home" />
+
+            <TextView
+                android:id="@+id/txtBarTitle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@id/txtBarHome"
+                android:layout_toRightOf="@id/txtBarBack"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@={activity.barTitle}"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/contentFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white" />
+
+    </LinearLayout>
+
+
+</layout>

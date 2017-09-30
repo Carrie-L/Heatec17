@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.adsale.HEATEC"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 19
+        versionName "4.2.2"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        ndk {
+//            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+//        }
+
+        dataBinding {
+            enabled = true
+        }
+
+        signingConfigs {
+            debug {
+                v1SigningEnabled true
+                v2SigningEnabled true
+            }
+            release {
+                v1SigningEnabled true
+                v2SigningEnabled true
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    useLibrary 'org.apache.http.legacy'
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
+    testCompile 'junit:junit:4.12'
+    compile 'com.facebook.fresco:fresco:0.12.0'
+    compile project(path: ':gestureimageview')
+    compile project(path: ':lib20')
+    compile project(path: ':pulltorefresh_library')
+    compile 'io.reactivex.rxjava2:rxjava:2.1.2'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+    //混淆需要另外添加一些东西，见Retrofit官网
+    compile('com.squareup.retrofit2:converter-simplexml:2.3.0') {
+        exclude module: 'stax-api'
+        exclude module: 'stax'
+        exclude module: 'xpp3'
+    }
+
+    compile 'org.greenrobot:greendao:2.2.0'
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
+}

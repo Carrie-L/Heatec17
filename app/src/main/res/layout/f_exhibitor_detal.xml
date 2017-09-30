@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <TextView
+        android:id="@+id/txtCompanyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp" />
+
+    <RelativeLayout
+        android:id="@+id/lyAddCollection"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtCompanyName"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp" >
+
+        <TextView
+            android:id="@+id/txtAddCollection"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="@string/txtAddCollection" />
+
+        <ImageView
+            android:id="@+id/imgAddCollection"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_toLeftOf="@+id/txtAddCollection"
+            android:src="@drawable/collect01" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lyTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lyAddCollection"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btnTab1"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_bg"
+            android:text="@string/tab1"
+            android:textColor="@drawable/tab_text_color" />
+
+        <Button
+            android:id="@+id/btnTab2"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_bg"
+            android:text="@string/tab2"
+            android:textColor="@drawable/tab_text_color" />
+
+        <Button
+            android:id="@+id/btnTab3"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_bg"
+            android:text="@string/tab3"
+            android:textColor="@drawable/tab_text_color" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lyTab"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/tabBg_sel"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <com.adsale.HEATEC.view.ExhibitorDtlView
+            android:id="@+id/exhibitorDtlView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.adsale.HEATEC.view.ScheduleInfoView
+            android:id="@+id/scheduleInfoView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.adsale.HEATEC.view.NoteView
+            android:id="@+id/noteView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</RelativeLayout>

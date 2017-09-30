@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp" >
+
+    <sanvio.libs.view.SanvioImageView
+        android:id="@+id/imgListItemLogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:id="@+id/txtListItemTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imgListItemLogo"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/imgListItemLogo" />
+
+    <TextView
+        android:id="@+id/txtListItemCreateDateTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtListItemTitle"
+        android:layout_below="@+id/txtListItemTitle"
+        android:textColor="#ccc" />
+
+</RelativeLayout>

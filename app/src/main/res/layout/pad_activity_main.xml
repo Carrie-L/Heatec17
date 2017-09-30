@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="mainModel"
+            type="com.adsale.HEATEC.viewmodel.MainViewModel" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/imgTopBg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/imgDescription"
+                    fresco:actualImageScaleType="fitCenter"
+                    fresco:viewAspectRatio="6.465" />
+
+                <Button
+                    android:id="@+id/btn_setting"
+                    android:layout_width="32dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBottom="@id/imgTopBg"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/bttn_setting"
+                    android:onClick="@{()->mainModel.clickBtn(3)}" />
+
+                <Button
+                    android:id="@+id/btn_en"
+                    style="@style/btn_language_pad_style"
+                    android:layout_toLeftOf="@id/btn_setting"
+                    android:background="@drawable/bttn_en"
+                    android:onClick="@{()->mainModel.clickBtn(1)}"
+                    android:visibility="@{mainModel.isShowBtnEN?View.VISIBLE:View.GONE}" />
+
+                <Button
+                    android:id="@+id/btn_sc"
+                    style="@style/btn_language_pad_style"
+                    android:layout_toLeftOf="@id/btn_en"
+                    android:background="@drawable/bttn_sc"
+                    android:onClick="@{()->mainModel.clickBtn(2)}"
+                    android:visibility="@{mainModel.isShowBtnCN?View.VISIBLE:View.GONE}" />
+
+                <Button
+                    android:id="@+id/btn_tc"
+                    style="@style/btn_language_pad_style"
+                    android:layout_toLeftOf="@id/btn_sc"
+                    android:background="@drawable/bttn_tc"
+                    android:onClick="@{()->mainModel.clickBtn(0)}"
+                    android:visibility="@{mainModel.isShowBtnTW?View.VISIBLE:View.GONE}" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_fixed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_header">
+
+                <com.adsale.HEATEC.view.MenuView
+                    android:id="@+id/iv_icon01"
+                    style="@style/pad_main_iv_big"
+                    android:onClick="@{()->mainModel.clickPadIcon(0)}"
+                    />
+
+                <com.adsale.HEATEC.view.MenuView
+                    android:id="@+id/iv_icon02"
+                    style="@style/pad_main_iv_small"
+                    android:layout_toRightOf="@id/iv_icon01"
+
+                    />
+                <!--android:onClick="@{()->mainModel.clickPadIcon(1)}"-->
+
+                <com.adsale.HEATEC.view.MenuView
+                    android:id="@+id/iv_icon04"
+                    style="@style/pad_main_iv_big"
+                    android:onClick="@{()->mainModel.clickPadIcon(3)}"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/iv_icon02"
+                    android:layout_toEndOf="@+id/iv_icon02" />
+
+                <com.adsale.HEATEC.view.MenuView
+                    android:id="@+id/iv_icon05"
+                    style="@style/pad_main_iv_small"
+                    android:onClick="@{()->mainModel.clickPadIcon(4)}"
+                    android:layout_toRightOf="@id/iv_icon04" />
+
+                <com.adsale.HEATEC.view.MenuView
+                    android:id="@+id/iv_icon06"
+                    style="@style/pad_main_iv_small"
+                    android:layout_below="@id/iv_icon05"
+                    android:onClick="@{()->mainModel.clickPadIcon(5)}"
+                    android:layout_toRightOf="@id/iv_icon04" />
+
+                <com.adsale.HEATEC.view.MenuView
+                    android:id="@+id/iv_icon07"
+                    style="@style/pad_main_iv_small_last"
+                    android:onClick="@{()->mainModel.clickPadIcon(6)}"
+                    android:layout_toRightOf="@id/iv_icon06" />
+
+                <com.adsale.HEATEC.view.MenuView
+                    android:id="@+id/iv_icon03"
+                    style="@style/pad_main_iv_small"
+                    android:layout_below="@id/iv_icon02"
+                    android:onClick="@{()->mainModel.clickPadIcon(2)}"
+                    android:layout_toRightOf="@id/iv_icon01" />
+
+                <com.adsale.HEATEC.view.MenuView
+                    android:id="@+id/iv_icon08"
+                    style="@style/pad_main_iv_small_last"
+                    android:layout_below="@id/iv_icon07"
+                    android:onClick="@{()->mainModel.clickPadIcon(7)}"
+                    android:layout_toRightOf="@id/iv_icon06" />
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_fixed" />
+
+            <LinearLayout
+                android:id="@+id/ll_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recycler_view"
+                android:orientation="horizontal">
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_left"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    fresco:actualImageScaleType="fitCenter"
+                    android:onClick="@{()->mainModel.clickPadIcon(15)}"
+                    fresco:viewAspectRatio="4.16" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/iv_right"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    fresco:actualImageScaleType="fitCenter"
+                    android:onClick="@{()->mainModel.clickPadIcon(16)}"
+                    fresco:viewAspectRatio="4.16" />
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</layout>

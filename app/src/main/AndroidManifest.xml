@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.adsale.HEATEC"
+    android:installLocation="preferExternal"
+    >
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- calendar -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="com.adsale.HEATEC.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.adsale.HEATEC.permission.C2D_MESSAGE" />
+
+    <application
+        android:name="com.adsale.HEATEC.App"
+        android:configChanges="orientation|screenSize|keyboardHidden"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <receiver
+            android:name="com.adsale.HEATEC.LocalAlarmReceiver"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="android.intent.action.MY_BROADCAST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.adsale.HEATEC.activity.LoadingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.AlarmReceiverDialogActivity"
+            android:theme="@style/Transparent" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.AlarmBlankActivity"
+            android:configChanges="locale"
+            android:screenOrientation="portrait"
+            android:theme="@style/HoloLightDialog_No_Border" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.PadMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.NewsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.NewsDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.ScaleImageActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.PadScaleImageActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.ExhibitorActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.ExhibitorListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.CategoryListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.RegisterActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.SubscribeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.ExhibitorDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.ScheduleEditActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.ScheduleActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.WebContentActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.MyExhibitorListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.activity.SettingActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
+            android:windowSoftInputMode="stateHidden|adjustPan" >
+        </activity>
+        <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize" >
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.adsale.HEATEC.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <receiver android:name="com.adsale.HEATEC.AlarmReceiver" >
+            <intent-filter>
+                <action android:name="com.adsale.HEATEC..AlarmReceiverNOTIFICATION_ALARM" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 百度统计相关配置 -->
+        <!-- ========================================================== -->
+        <!-- 您从百度网站获取的APP KEY -->
+        <meta-data
+            android:name="BaiduMobAd_STAT_ID"
+            android:value="7111f5368c" />
+        <!-- Release 87c82715ea -->
+
+
+        <!-- 渠道商编号 -->
+        <meta-data
+            android:name="BaiduMobAd_CHANNEL"
+            android:value="Google play" />
+
+        <!-- 是否开启错误日志统计，默认为false -->
+        <meta-data
+            android:name="BaiduMobAd_EXCEPTION_LOG"
+            android:value="true" />
+        <!-- 日志发送策略，可选值：APP_START、ONCE_A_DAY、SET_TIME_INTERVAL，默认为APP_START -->
+        <meta-data
+            android:name="BaiduMobAd_SEND_STRATEGY"
+            android:value="APP_START" />
+        <!-- 日志发送策略 为SET_TIME_INTERVAL时，需设定时间间隔(取消下行注释)。取值为1-24的整数，默认为1 -->
+        <meta-data
+            android:name="BaiduMobAd_TIME_INTERVAL"
+            android:value="1" />
+        <!-- 日志仅在wifi网络下发送，默认为false -->
+        <meta-data
+            android:name="BaiduMobAd_ONLY_WIFI"
+            android:value="true" />
+        <!-- 是否获取基站位置信息 ,默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_CELL_LOCATION"
+            android:value="true" />
+        <!-- 是否获取GPS位置信息，默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_GPS_LOCATION"
+            android:value="true" />
+        <!-- 是否获取WIFI位置信息，默认为true -->
+        <meta-data
+            android:name="BaiduMobAd_WIFI_LOCATION"
+            android:value="true" />
+        <!-- ========================================================== -->
+        <!-- 百度统计相关配置 e -->
+    </application>
+
+</manifest>

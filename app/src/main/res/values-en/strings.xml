@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HEATEC</string>
+    <string name="prereg_end">Visitor pre-registration is closed.Please bring your business cards to register at our onsite registration counters,Thank you!</string>
+
+    <!--  -->
+    <string name="thx_yd">Thank your for subscription！</string>
+    <string name="connection_time_out">Connection Timeout</string>
+
+    <!--  -->
+    <string-array name="main_nav">
+        <item>Visitor Pre-registration</item>
+        <item>Exhibitor List</item>
+        <item>Show Information</item>
+        <item>Hall Map</item>
+        <item>Concurrent Event</item>
+        <item>Co-located Expo</item>
+        <item>Transportation</item>
+        <item>News</item>
+        <item>Contact Us</item>
+        <item>Subscribe eNewsletter</item>
+        <item>My Exhibitor</item>
+        <item>Schedule</item>
+        <item>Settings</item>
+    </string-array>
+
+    <!--  -->
+    <string-array name="exhibitor_nav">
+        <item>All Exhibitors</item>
+        <item>Search by Product</item>
+        <item>Search by Hall</item>
+        <item>Search by Region</item>
+        <item>My Exhibitor</item>
+    </string-array>
+
+    <!--  -->
+    <string-array name="setting_nav">
+        <item>Link to websites</item>
+        <item>Add to calendar</item>
+        <item>Reset All Data</item>
+        <item>Privacy Policy Statement</item>
+        <item>Terms of Use</item>
+    </string-array>
+
+    <!--  -->
+    <string-array name="pad_setting_nav">
+        <item>Language</item>
+        <item>Link to websites</item>
+        <item>Add to calendar</item>
+        <item>Reset All Data</item>
+        <item>Privacy Policy Statement</item>
+        <item>Terms of Use</item>
+    </string-array>
+
+    <!--  -->
+    <string name="back">Back</string>
+    <string name="home">Home</string>
+
+    <!--  -->
+    <string name="no_news">No News</string>
+    <string name="no_exhibitor"></string>
+    <string name="no_scheduleInfo">No Schedule</string>
+    <string name="no_my_exhibitor">No Exhibitor</string>
+    <string name="nodata">No Data</string>
+
+    <!--  -->
+    <string name="title_news">Market News &amp; Interview</string>
+    <string name="title_exhibitor">Exhibitor List</string>
+    <string name="title_exhibitor_deti">Conpany Info</string>
+    <string name="title_agenda">Agenda</string>
+<string name="title_edit_agenda">Edit Agenda</string>
+    <string name="title_schedule">Schedule</string>
+    <string name="title_register">Visitor Pre-registration</string>
+    <string name="title_summary">Exhibitor Information</string>
+    <string name="title_plan">Hall Map</string>
+    <string name="title_event">Concurrent Event</string>
+    <string name="title_expo">Co-located Expo</string>
+    <string name="title_transportation">Transportation</string>
+    <string name="title_contact_us">Contact Us</string>
+    <string name="title_my_exhibitor">My Exhibitor</string>
+    <string name="title_setting">Setting</string>
+    <string name="title_subscribe">Subscribe eNewsletter</string>
+
+    <!--  -->
+    <string name="editFilter_hint">Exhibitor Name/Booth Number</string>
+
+    <!--  -->
+    <string name="txtAddCollection">Add My Exhibitor</string>
+    <string name="txtAddCollection2">Added To My Exhibitor</string>
+    <string name="tab1">Info</string>
+    <string name="tab2">Agenda</string>
+    <string name="tab3">Notes</string>
+
+    <!--  -->
+    <string name="booth">Booth：</string>
+    <string name="address">Address：</string>
+    <string name="email">Email：</string>
+    <string name="tel">Telephone：</string>
+    <string name="fax">Fax：</string>
+    <string name="website">Website：</string>
+    <string name="category">Application Category</string>
+
+    <!--  -->
+    <string name="addScheduleInfo">Add Schedule</string>
+    <string name="btnSave">Save</string>
+    <string name="btnClear">Clear All</string>
+    <string name="btnDel">Delete</string>
+
+    <!--  -->
+    <string name="note_successful">Notes saved successfully</string>
+    <string name="ask_clear_note">Do you want to clear all notes messages?</string>
+    <string name="ask_schedule">Another agenda is saved at the same time. Continue to save?</string>
+    <string name="not_title">Title cannot be empty</string>
+
+    <!--  -->
+    <string name="ScheduleInfo_lable">Agenda %1$s:</string>
+    <string name="ScheduleInfo_startTime">Date:%1$s</string>
+    <string name="title">Title</string>
+    <string name="location">Location</string>
+    <string name="startTime">Date</string>
+    <string name="length">Duration</string>
+    <string name="hour">hour</string>
+    <string name="minute">minutes</string>
+
+    <string name="imgDescription"> </string>
+    <string name="title_sort"> </string>
+
+    <!--  -->
+    <string name="register_str004">Email</string>
+    <string name="register_msg001">Please fill in "Name"</string>
+    <string name="register_msg002">Please don\'t key in number or symbols when entering "Name"</string>
+    <string name="register_msg003">Please fill in "Email"</string>
+    <string name="register_msg004">Please fill in valid "Email"</string>
+    <string name="register_msg007">Please fill in "Number"</string>
+    <string name="register_msg008">Please fill in valid "Number"</string>
+    <string name="register_msg009">Registration successful!</string>
+    <string name="register_msg010">Registration failure!</string>
+    <string name="register_msg013">Please enter a company name!</string>
+    <string name="reg_submit">Submit</string>
+    <string name="reg_reset">Reset</string>
+    <string name="reg_again">Reset</string>
+    <string name="reg_calendar">Calendar</string>
+    <string name="Input_Outlimit_Msg">Content too long</string>
+    <string name="NoNetwok_Msg">Sorry! Can not connect to the Internet, please try again later!</string>
+   
+    <string name="Registering_MSg">Submitting data, please wait!</string>
+    <string name="reg_reset_title">Reset Pre-registration information?</string>
+    <string name="reg_reset_confirm">Reset</string>
+    <string name="reg_reset_cancel">Cancel</string>
+
+    <!--  -->
+    <string name="subscribe_str001">Subscribe</string>
+    <string name="subscribe_str002">Company</string>
+    <string name="subscribe_str003">Name</string>
+    <string name="subscribe_str005">Privacy Policy Statement</string>
+
+    <!--  -->
+    <string name="ask_clear">Would you like to reset all data settings to default value?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!--  -->
+    <string name="notes">HEATEC/ BOILER SHANGHAI/ BIOTEC/ THERMMOTEC</string>
+    <string name="ask_addToCalendar">Add the show date of HEATEC 2017 to your device\'s calendar?</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="addToCalendar_success">The show date of HEATEC 2017 is added to your device\'s calendar.</string>
+    <string name="addToCalendar_fail">Save to calendar fail!</string>
+    
+    <string name="calendar_description">http://www.heatecchina.com</string>
+    <string name="calendar_location">Shanghai World Expo Exhibition &amp; Convention Center(SWEECC), PR China</string>
+    
+    
+    <!--  -->
+    <string name="select_url">Please select a website version</string>
+    <string name="sharetitle">HEATEC 2017</string>
+
+    <string-array name="url_ver">
+        <item>Full version</item>
+        <item>Mobile version</item>
+    </string-array>
+
+    <!--  -->
+    <string-array name="urls">
+        <item>http://www.heatecchina.com/Heatec17/Home/lang-eng/Information.aspx</item>
+        <item>http://www.heatecchina.com/Heatec17/Mobile/lang-eng/Home.aspx</item>
+    </string-array>
+
+    <!--  -->
+    <string name="more">More</string>
+
+    <!--  -->
+    <string name="EXIT">Exit</string>
+    <string name="EXIT_MSG">Exit HEATEC?</string>
+
+    <!--  -->
+    <string-array name="sharing_platform">
+        <item>Facebook</item>
+        <item>Twitter</item>
+        <item>WeChat Friends</item>
+        <item>WeChat Circle of Friends</item>
+        <item>WeiBo</item>
+        <item>QQ</item>
+        <item>LinkeIn</item>
+    </string-array>
+
+    <string name="selcet_sharing_platform">Please select a Shared platform</string>
+    <string name="share">Share</string>
+    <string name="Share_success">Share success </string>
+    <string name="Share_failed">Share failed</string>
+    <string name="Share_cancel">Share cancel</string>
+
+    <string name="exception_toast_phone">Sorry, your device can not make a call.</string>
+    <string name="exception_toast_email">No email client installed.</string>
+    
+    
+
+</resources>

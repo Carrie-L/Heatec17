@@ -1,0 +1,66 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="activity"
+            type="com.adsale.HEATEC.activity.LoadingActivity" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/loading">
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:visibility="@{activity.isShowPB?View.VISIBLE:View.GONE}"/>
+
+        <LinearLayout
+            android:id="@+id/lyLanguage"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:visibility="@{activity.isShowLang?View.VISIBLE:View.GONE}">
+
+            <ImageView
+                android:id="@+id/btnEN"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:onClick="@{()->activity.selectLang(1)}"
+                android:src="@drawable/loading_btn_en" />
+
+            <ImageView
+                android:id="@+id/btnTW"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:onClick="@{()->activity.selectLang(0)}"
+                android:src="@drawable/loading_btn_tc" />
+
+            <ImageView
+                android:id="@+id/btnCN"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:onClick="@{()->activity.selectLang(2)}"
+                android:src="@drawable/loading_btn_sc" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

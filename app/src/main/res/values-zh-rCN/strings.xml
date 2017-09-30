@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">供热暨锅炉展</string>
+    
+    
+    
+
+        <string name="prereg_end">观众预先登记已经结束，请携带公司名片前往展会现场办理登记手续。谢谢！</string>
+        
+         <!--  -->
+    <string name="thx_yd">感谢您的订阅！</string>
+    <string name="connection_time_out">连接超时</string>
+    <!--  -->
+    <string-array name="main_nav">
+        <item>观众预先登记</item>
+        <item>参展商名单</item>
+        <item>展会概述</item>
+        <item>展馆平面图</item>
+        <item>同期活动</item>
+        <item>同期展览</item>
+        <item>交通</item>
+        <item>最新消息</item>
+        <item>联系我们</item>
+        <item>订阅电子快讯</item>
+        <item>我的参展商</item>
+        <item>议程</item>
+        <item>设置</item>
+    </string-array>
+
+    <!--  -->
+    <string-array name="exhibitor_nav">
+        <item>全部参展商</item>
+        <item>按产品搜索</item>
+        <item>按展馆搜索</item>
+        <item>按地区搜索</item>
+        <item>我的参展商</item>
+    </string-array>
+
+    <!--  -->
+    <string-array name="setting_nav">
+        <item>网站连结</item>
+        <item>添加到日历</item>
+        <item>重置所有设定</item>
+        <item>私隐政策声明</item>
+        <item>使用条款</item>
+    </string-array>
+
+    <!--  -->
+    <string-array name="pad_setting_nav">
+        <item>语言</item>
+        <item>网站连结</item>
+        <item>添加到日历</item>
+        <item>重置所有设定</item>
+        <item>私隐政策声明</item>
+        <item>使用条款</item>
+    </string-array>
+
+    <!--  -->
+    <string name="back">返回</string>
+    <string name="home">主目录</string>
+
+    <!--  -->
+    <string name="no_news">暂无最新消息</string>
+    <string name="no_exhibitor">暂无展商资料</string>
+    <string name="no_scheduleInfo">暂无议程</string>
+    <string name="no_my_exhibitor">没有我的参展商</string>
+
+    <!--  -->
+    <string name="title_news">最新消息及访谈</string>
+    <string name="title_exhibitor">参展商名单</string>
+    <string name="title_exhibitor_deti">公司资料</string>
+    <string name="title_agenda">议程</string>
+<string name="title_edit_agenda">编辑议程</string>
+    <string name="title_schedule">议程</string>
+    <string name="title_register">观众预先登记</string>
+    <string name="title_summary">展会资料</string>
+    <string name="title_plan">展馆平面图</string>
+    <string name="title_event">同期活动</string>
+    <string name="title_expo">同期展览</string>
+    <string name="title_transportation">交通</string>
+    <string name="title_contact_us">联系我们</string>
+    <string name="title_my_exhibitor">我的参展商</string>
+    <string name="title_setting">设置</string>
+    <string name="title_subscribe">订阅电子快讯</string>
+
+    <!--  -->
+    <string name="title_sort">划</string>
+    <string name="editFilter_hint">参展商名称/展览摊位</string>
+
+    <!--  -->
+    <string name="txtAddCollection">加入我的参展商</string>
+    <string name="txtAddCollection2">已经加到我的参展商</string>
+    <string name="tab1">公司资料</string>
+    <string name="tab2">议程</string>
+    <string name="tab3">笔记选项</string>
+
+    <!--  -->
+    <string name="booth">展览摊位：</string>
+    <string name="address">地址：</string>
+    <string name="email">电邮：</string>
+    <string name="tel">电话：</string>
+    <string name="fax">传真：</string>
+    <string name="website">网址：</string>
+    <string name="category">产品</string>
+
+    <!--  -->
+    <string name="addScheduleInfo">新增议程</string>
+    <string name="btnSave">储存</string>
+    <string name="btnClear">清除所有</string>
+    <string name="btnDel">删除</string>
+
+    <!--  -->
+    <string name="note_successful">成功储存笔记</string>
+    <string name="ask_clear_note">确定要清除笔记吗?</string>
+    <string name="ask_schedule">相同时间已储存了另一个议程，继续储存?</string>
+    <string name="not_title">标题不能为空</string>
+
+    <!--  -->
+    <string name="ScheduleInfo_lable">议程%1$s:</string>
+    <string name="ScheduleInfo_startTime">时间:%1$s</string>
+
+    <!--  -->
+    <string name="title">标题</string>
+    <string name="location">位置</string>
+    <string name="startTime">时间</string>
+    <string name="length">为时</string>
+    <string name="hour">小时</string>
+    <string name="minute">分钟</string>
+    <string name="nodata">暂无相关资讯</string>
+    <string name="imgDescription"> </string>
+    <!--  -->
+    <string name="register_msg001">请输入"观众姓名"</string>
+    <string name="register_msg002">输入观众姓名时，请不要输入数位或符号！</string>
+    <string name="register_str004">电邮</string>
+    <string name="register_msg003">请输入电邮！</string>
+    <string name="register_msg004">请输入有效的电邮！</string>
+    <string name="register_msg007">请输入手机:-电话号码！</string>
+    <string name="register_msg008">请输入有效的手机:-电话号码！</string>
+    <string name="register_msg009">登记成功！</string>
+    <string name="register_msg010">登记失败！</string>
+    <string name="register_msg013">请输入公司名称！</string>
+    <string name="reg_submit">递交</string>
+    <string name="reg_reset">重置</string>
+    <string name="reg_again">重来</string>
+    <string name="reg_calendar">日历</string>
+    <string name="Input_Outlimit_Msg">内容长度超过系统限制</string>
+    <string name="NoNetwok_Msg">对不起!不能连接网络,请稍后再试！</string>
+    <string name="Registering_MSg">正在提交数据，请稍后！</string>
+    <string name="reg_reset_title">确定重置预登记信息？</string>
+    <string name="reg_reset_confirm">重置</string>
+    <string name="reg_reset_cancel">取消</string>
+
+    <!--  -->
+    <string name="subscribe_str001">订阅资料</string>
+    <string name="subscribe_str002">公司名称</string>
+    <string name="subscribe_str003">姓名</string>
+    <string name="subscribe_str005">私隐政策声明</string>
+
+    <!--  -->
+    <string name="ask_clear">是否重置所有设定？</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+
+    <!--  -->
+    <string name="notes">2017上海国际供热、锅炉、生物质能暨热工设备展</string>
+    <string name="ask_addToCalendar">确定要将展览日期存入日历表吗？</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="addToCalendar_success">2017上海国际供热、锅炉、生物质能暨热工设备展的展览日期已经加到日历表。</string>
+    <string name="addToCalendar_fail">汇入行事历失败！</string>
+    
+    <string name="calendar_description">http://www.heatecchina.com</string>
+    <string name="calendar_location">中国·上海世博展览馆</string>
+
+    <!--  -->
+    <string name="select_url">请选择网站版本</string>
+    <string name="sharetitle">供热暨锅炉展2017</string>
+
+    <string-array name="url_ver">
+        <item>完整版</item>
+        <item>移动版</item>
+    </string-array>
+
+    <!--  -->
+    <string-array name="urls">
+        <item>http://www.heatecchina.com/Heatec17/Home/lang-simp/Information.aspx</item>
+        <item>http://www.heatecchina.com/Heatec17/Mobile/lang-simp/Home.aspx</item>
+    </string-array>
+
+    <!--  -->
+    <string name="more">更多</string>
+    <!--  -->
+    <string name="EXIT">退出</string>
+    <string name="EXIT_MSG">离开供热暨锅炉展？</string>
+
+    <!--  -->
+    <string-array name="sharing_platform">
+        <item>Facebook</item>
+        <item>Twitter</item>
+        <item>微信好友</item>
+        <item>微信朋友圈</item>
+        <item>微博</item>
+        <item>QQ</item>
+        <item>LinkeIn</item>
+    </string-array>
+
+    <string name="selcet_sharing_platform">请选择分享平台</string>
+    <string name="share">分享</string>
+    <string name="Share_success">分享成功 </string>
+    <string name="Share_failed">分享失败</string>
+    <string name="Share_cancel">取消分享</string>
+    
+
+    
+     <string name="exception_toast_phone">抱歉，您的设备不支持打电话。</string>
+     <string name="exception_toast_email">No email client installed.</string>
+
+</resources>

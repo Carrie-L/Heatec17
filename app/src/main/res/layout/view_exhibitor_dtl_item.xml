@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <ImageView
+        android:id="@+id/imgIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:contentDescription="@string/imgDescription"
+        android:src="@drawable/booth" />
+
+    <TextView
+        android:id="@+id/txtLable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:gravity="center_vertical|left" />
+
+    <TextView
+        android:id="@+id/txtContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|left" />
+
+</merge>

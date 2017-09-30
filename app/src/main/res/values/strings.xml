@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+     <string name="prereg_end">觀眾預先登記已結束，请攜公司名片前往展會現場辦理登記手續。謝謝!</string>
+
+    <string name="app_name">供熱暨鍋爐展</string>
+    <string name="imgDescription"></string>
+
+    
+    <string name="exception_toast_email">No email client installed.</string>
+    <string name="exception_toast_phone">Sorry, your device can not make a call.</string>
+    
+    
+
+    <!-- 選擇語言 -->
+    <string name="notes">2017上海國際供熱、鍋爐、生物質能暨熱工設備展</string>
+    <string name="ask_addToCalendar">確定要將展覽日期存入日曆表嗎？</string>
+    <string name="ok">確定</string>
+    <string name="cancel">取消</string>
+    <string name="addToCalendar_success">2017上海國際供熱、鍋爐、生物質能暨熱工設備展的展覽日期已經加到此裝置的日曆表。</string>
+    <string name="addToCalendar_fail">匯入行事曆失敗！</string>
+    
+    
+    <!--  calendar-->
+    <string name="calendar_description">http://www.heatecchina.com</string>
+    <string name="calendar_location">中國·上海世博館</string>
+    
+    <!--  -->
+    <string name="select_url">請選擇網站版本</string>
+    <string name="sharetitle">供熱暨鍋爐展2017</string>
+    <string name="EXIT">退出</string>
+    <string name="EXIT_MSG">離開供熱暨鍋爐展？</string>
+    <string name="back">返回</string>
+    <string name="home">主目錄</string>
+
+     <!--  -->
+    <string name="register_msg001">請輸入"觀眾姓名"</string>
+    <string name="register_msg002">輸入觀眾姓名時，請不要輸入數位或符號！</string>
+    <string name="register_str004">電郵</string>
+    <string name="register_msg003">請輸入"電郵"</string>
+    <string name="register_msg004">請輸入有效的"電郵"</string>
+    <string name="register_msg007">請輸入"電話號碼"</string>
+    <string name="register_msg008">請輸入有效的"電話號碼"</string>
+    <string name="register_msg009">登記成功！</string>
+    <string name="register_msg010">登記失敗！</string>
+    <string name="register_msg013">請輸入公司名稱！</string>
+    <string name="reg_submit">遞交</string>
+    <string name="reg_reset">重置</string>
+    <string name="reg_again">重來</string>
+    <string name="reg_calendar">日曆</string>
+    <string name="reg_reset_confirm">重置</string>
+    <string name="reg_reset_cancel">取消</string>
+    <string name="reg_reset_title">確定重置預登記信息？</string>
+    <string name="Input_Outlimit_Msg">內容長度超過系統限制</string>
+    <string name="NoNetwok_Msg">對不起!不能連接網絡,請稍後再試！</string>
+    <string name="Registering_MSg">正在提交數據，請稍候！</string>
+  
+
+    <!-- 訂閱電子快訊 -->
+    <string name="subscribe_str001">訂閱資料</string>
+    <string name="subscribe_str002">公司名稱</string>
+    <string name="subscribe_str003">姓名</string>
+    <string name="subscribe_str005">私隱政策聲明</string>
+    <string name="nodata">沒有相關資訊</string>
+
+    <!-- 我的參展商 -->
+    <string name="txtAddCollection">加入我的參展商</string>
+    <string name="txtAddCollection2">已經加到我的參展商</string>
+    <string name="tab1">公司資料</string>
+    <string name="tab2">議程</string>
+    <string name="tab3">筆記選項</string>
+
+    <!-- 我的參展商詳情頁面 -->
+    <string name="booth">展覽攤位：</string>
+    <string name="address">地址：</string>
+    <string name="email">電郵：</string>
+    <string name="tel">電話：</string>
+    <string name="fax">傳真：</string>
+    <string name="website">網址：</string>
+    <string name="category">產品</string>
+
+    <!--  -->
+    <string name="title_sort">劃</string>
+    <string name="editFilter_hint">參展商名稱/展覽攤位</string>
+
+    <!--  -->
+    <string name="no_news">沒有最新消息</string>
+    <string name="no_exhibitor">沒有展商資料</string>
+    <string name="no_scheduleInfo">沒有議程</string>
+    <string name="no_my_exhibitor">沒有參展商</string>
+
+    <!-- note -->
+    <string name="addScheduleInfo">新增議程</string>
+    <string name="btnSave">儲存</string>
+    <string name="btnClear">清除所有</string>
+    <string name="btnDel">删除</string>
+
+    <!-- 編輯議程 -->
+    <string name="title">標題</string>
+    <string name="location">位置</string>
+    <string name="startTime">時間</string>
+    <string name="length">為時</string>
+    <string name="hour">小時</string>
+    <string name="minute">分鐘</string>
+
+    <!--  -->
+    <string name="title_news">最新消息及訪談</string>
+    <string name="title_exhibitor">參展商名單</string>
+    <string name="title_exhibitor_deti">公司資料</string>
+    <string name="title_agenda">議程</string>
+    <string name="title_edit_agenda">編輯議程</string>
+    <string name="title_schedule">議程</string>
+    <string name="title_register">觀眾預先登記</string>
+    <string name="title_summary">展會資料</string>
+    <string name="title_plan">展館平面圖</string>
+    <string name="title_event">同期活動</string>
+    <string name="title_expo">同期展覽</string>
+    <string name="title_transportation">交通</string>
+    <string name="title_contact_us">聯繫我們</string>
+    <string name="title_my_exhibitor">我的參展商</string>
+    <string name="title_setting">設置</string>
+    <string name="title_subscribe">訂閱電子快訊</string>
+
+    <!-- share -->
+    <string name="selcet_sharing_platform">請選擇分享平台</string>
+    <string name="share">分享</string>
+    <string name="Share_success">分享成功 </string>
+    <string name="Share_failed">分享失敗</string>
+    <string name="Share_cancel">取消分享</string>
+
+    <bool name="isTablet">false</bool>
+
+    <!--  -->
+    <string-array name="main_nav">
+        <item>觀眾預先登記</item>
+        <item>參展商名單</item>
+        <item>展會概述</item>
+        <item>展館平面圖</item>
+        <item>同期活動</item>
+        <item>同期展覽</item>
+        <item>交通</item>
+        <item>最新消息</item>
+        <item>聯繫我們</item>
+        <item>訂閱電子快訊</item>
+        <item>我的參展商</item>
+        <item>議程</item>
+        <item>設置</item>
+    </string-array>
+
+    <!--  -->
+    <string-array name="exhibitor_nav">
+        <item>全部參展商</item>
+        <item>按産品搜索</item>
+        <item>按展館搜索</item>
+        <item>按地區搜索</item>
+        <item>我的參展商</item>
+    </string-array>
+
+    <!--  -->
+    <string-array name="setting_nav">
+        <item>網站連結</item>
+        <item>添加到日歷</item>
+        <item>重置所有設定</item>
+        <item>私隱政策聲明</item>
+        <item>使用條款</item>
+    </string-array>
+
+    <!--  -->
+    <string-array name="pad_setting_nav">
+        <item>語言</item>
+        <item>網站連結</item>
+        <item>添加到日歷</item>
+        <item>重置所有設定</item>
+        <item>私隱政策聲明</item>
+        <item>使用條款</item>
+    </string-array>
+    <string-array name="url_ver">
+        <item>完整版</item>
+        <item>手機版</item>
+    </string-array>
+    <string-array name="sharing_platform">
+        <item>Facebook</item>
+        <item>Twitter</item>
+        <item>微信好友</item>
+        <item>微信朋友圈</item>
+        <item>微博</item>
+        <item>QQ</item>
+        <item>LinkeIn</item>
+    </string-array>
+    <string-array name="urls">
+        <item>http://www.heatecchina.com/Heatec17/Home/lang-trad/Information.aspx</item>
+        <item>http://www.heatecchina.com/Heatec17/Mobile/lang-trad/Home.aspx</item>
+    </string-array>
+
+    <!--  -->
+    <string name="note_successful">成功儲存筆記</string>
+    <string name="ask_clear_note">你確定想清除筆記?</string>
+    <string name="ask_schedule">相同時間已儲存了另一個議程，繼續儲存?</string>
+    <string name="not_title">標題不能為空</string>
+
+    <!--  -->
+    <string name="ask_clear">你想重置所有資料為預設值嗎？</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="ScheduleInfo_lable">議程%1$s:</string>
+    <string name="ScheduleInfo_startTime">時間:%1$s</string>
+
+    <!--  -->
+    <string name="more">更多</string>
+
+    <string name="thx_yd">感謝您的訂閱！</string>
+    <string name="connection_time_out">連接超時</string>
+    
+
+</resources>

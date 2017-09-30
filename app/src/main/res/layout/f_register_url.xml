@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal" >
+
+    <WebView
+        android:id="@+id/webview_register"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:progressDrawable="@drawable/progressbar_selector" />
+
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rl_registed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:id="@+id/tv_register_info1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:lineSpacingExtra="1.3dp"
+                />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/iv_registed"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_register_info1"
+                fresco:viewAspectRatio="0.85"
+                android:layout_centerHorizontal="true"
+                />
+
+            <TextView
+                android:id="@+id/tv_register_info2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_registed"
+                android:layout_margin="16dp"
+                android:lineSpacingExtra="1.3dp"
+                />
+
+<!-- 
+            <ImageView
+                android:id="@+id/iv_center_line"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                />
+ -->
+            <Button
+                android:id="@+id/btn_reRegister"
+                android:layout_width="80dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/tv_register_info2"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/btn_bg"
+                android:text="@string/reg_again"
+                android:layout_centerHorizontal="true"
+                android:textColor="@drawable/btn_text_color" />
+
+           <!--  <Button
+                android:id="@+id/btn_add_calendar"
+                android:layout_width="80dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/tv_register_info2"
+                android:layout_marginBottom="16dp"
+                android:layout_toRightOf="@id/iv_center_line"
+                android:background="@drawable/btn_bg"
+                android:onClick="addToCalendar"
+                android:text="@string/reg_calendar"
+                android:textColor="@drawable/btn_text_color"
+                /> -->
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
