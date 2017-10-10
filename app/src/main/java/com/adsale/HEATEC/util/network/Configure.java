@@ -15,8 +15,11 @@ public class Configure {
 
 	public static final String Subscribe_EN_URL = "https://eform.adsale.com.hk/FormR/ContactUs/EnewsSub.aspx?showid=460&lang=eng&device=app&WAct=9105"; 
 	public static final String Subscribe_CN_URL = "https://eform.adsale.com.hk/FormR/ContactUs/EnewsSub.aspx?showid=460&lang=trad&device=app&WAct=9105"; 
-	public static final String Subscribe_TW_URL = "https://eform.adsale.com.hk/FormR/ContactUs/EnewsSub.aspx?showid=460&lang=simp&device=app&WAct=9105"; 
-	
+	public static final String Subscribe_TW_URL = "https://eform.adsale.com.hk/FormR/ContactUs/EnewsSub.aspx?showid=460&lang=simp&device=app&WAct=9105";
+
+	public static final String Subscribe_URL = "https://eform.adsale.com.hk/FormR/ContactUs/EnewsSub.aspx?showid=460&lang={langType}&device=app&WAct=9105";
+
+
 	
 //	public static final String FTP_INFORMATION_URL = CLE_URL.concat("apps/2017/information.txt");
 

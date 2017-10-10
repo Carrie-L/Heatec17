@@ -5,6 +5,7 @@ import okhttp3.RequestBody;
 import android.content.SharedPreferences;
 
 import com.adsale.HEATEC.App;
+import com.adsale.HEATEC.R;
 
 public class NetworkHelper {
 	public static final String TAG = "NetworkHelper";
@@ -16,6 +17,7 @@ public class NetworkHelper {
 
 	public static RequestBody getMasterRequestBody() {
 		return RequestBody.create(MEDIA_TYPE_XML, getMasterSoapBody());
+
 	}
 
 	private static String getMasterSoapBody() {

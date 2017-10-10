@@ -28,7 +28,7 @@ import com.adsale.HEATEC.util.LogUtil;
 import com.adsale.HEATEC.util.PermissionUtil;
 import com.adsale.HEATEC.util.SystemMethod;
 import com.adsale.HEATEC.util.network.Configure;
-import com.adsale.HEATEC.util.network.DownClient;
+import com.adsale.HEATEC.util.network.NetworkClient;
 import com.adsale.HEATEC.util.network.NetworkHelper;
 import com.baidu.mobstat.SendStrategyEnum;
 import com.baidu.mobstat.StatService;
@@ -58,7 +58,7 @@ public class LoadingActivity extends AppCompatActivity {
     public final ObservableBoolean isShowLang = new ObservableBoolean(false);
     public final ObservableBoolean isShowPB = new ObservableBoolean(false);// progressBar
     private String oDeviceType;
-    private DownClient mDownClient;
+    private NetworkClient mDownClient;
     private ArrayList<MainIcon> mainIcons;
     private ArrayList<WebContent> webContents;
     private Disposable mTxtDisposable, mWCDisposable;
@@ -105,7 +105,7 @@ public class LoadingActivity extends AppCompatActivity {
         if (!App.isNetworkAvailable) {
             return;
         }
-        mDownClient = SystemMethod.setupRetrofit(DownClient.class, Configure.DOWNLOAD_PATH);
+        mDownClient = SystemMethod.setupRetrofit(NetworkClient.class, Configure.DOWNLOAD_PATH);
         isShowPB.set(true);
         mWebContentDir = RootDir.concat("WebContent/");
         mMainIconDir = RootDir.concat("MainIcon/");

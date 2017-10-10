@@ -3,7 +3,7 @@ package com.adsale.HEATEC.base;
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
 
-import com.adsale.ChinaPlas.BR;
+import com.adsale.HEATEC.BR;
 
 /**
  * ViewHolder基类

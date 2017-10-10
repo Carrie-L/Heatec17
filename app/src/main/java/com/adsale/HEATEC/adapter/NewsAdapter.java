@@ -4,13 +4,7 @@ import android.databinding.ViewDataBinding;
 import android.net.Uri;
 import android.widget.ImageView;
 
-import com.adsale.ChinaPlas.R;
-import com.adsale.ChinaPlas.base.CpsBaseAdapter;
-import com.adsale.ChinaPlas.base.CpsBaseViewHolder;
-import com.adsale.ChinaPlas.dao.News;
-import com.adsale.ChinaPlas.databinding.ItemNewsBinding;
-import com.adsale.ChinaPlas.ui.NewsActivity;
-import com.adsale.ChinaPlas.utils.NetWorkHelper;
+import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.activity.NewsActivity;
 import com.adsale.HEATEC.base.AdsaleBaseAdapter;
 import com.adsale.HEATEC.base.AdsaleBaseViewHolder;

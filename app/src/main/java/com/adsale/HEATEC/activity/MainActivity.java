@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements MainViewModel.OnM
 
     private int mCurLanguage;
     private String title;
-    private ftpInformation information;
     private String strBaiDu_tj;
     private MainIcon mMainIcon;
     private Intent intent;
@@ -52,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements MainViewModel.OnM
         mContext = getApplicationContext();
         mCurLanguage = SystemMethod.getCurLanguage(mContext);
         SystemMethod.switchLanguage(getApplicationContext(), mCurLanguage);// must!!
-        information = SystemMethod.getInformation(mContext);
 
         findView();
         initRecyclerView();

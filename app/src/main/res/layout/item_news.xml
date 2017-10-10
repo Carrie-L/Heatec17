@@ -22,10 +22,8 @@
             android:id="@+id/iv_news_pic"
             android:layout_width="40dp"
             android:layout_height="40dp"
-
             android:layout_marginLeft="16dp"
             />
-
         <!--android:background="@{obj.logo}"-->
 
         <TextView
@@ -51,8 +49,6 @@
             android:textColor="@color/grey_font"
             />
     </RelativeLayout>
-
-    <!--.-->
 
 
 </layout>

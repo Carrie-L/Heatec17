@@ -4,10 +4,14 @@ package com.adsale.HEATEC.dao;
 
 // KEEP INCLUDES - put your custom includes here
 // KEEP INCLUDES END
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Entity mapped to table "NEWS".
  */
-public class News {
+public class News implements Parcelable {
 
     private String NewsID;
     private Boolean IsDelete;
@@ -145,4 +149,47 @@ public class News {
     // KEEP METHODS - put your custom methods here
     // KEEP METHODS END
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.NewsID);
+        dest.writeValue(this.IsDelete);
+        dest.writeValue(this.LType);
+        dest.writeString(this.Logo);
+        dest.writeString(this.ShareLink);
+        dest.writeString(this.Title);
+        dest.writeString(this.Description);
+        dest.writeString(this.CreateDateTime);
+        dest.writeString(this.UpdateDateTime);
+        dest.writeString(this.RecordTimeStamp);
+        dest.writeString(this.PublishDate);
+    }
+
+    protected News(Parcel in) {
+        this.NewsID = in.readString();
+        this.IsDelete = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.LType = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.Logo = in.readString();
+        this.ShareLink = in.readString();
+        this.Title = in.readString();
+        this.Description = in.readString();
+        this.CreateDateTime = in.readString();
+        this.UpdateDateTime = in.readString();
+        this.RecordTimeStamp = in.readString();
+        this.PublishDate = in.readString();
+    }
+
+    public static final Parcelable.Creator<News> CREATOR = new Parcelable.Creator<News>() {
+        public News createFromParcel(Parcel source) {
+            return new News(source);
+        }
+
+        public News[] newArray(int size) {
+            return new News[size];
+        }
+    };
 }

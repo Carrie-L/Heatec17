@@ -234,12 +234,12 @@ public class ExhibitorNavFragment extends BaseFragment {
 			|| mFunctionName[position].equals(information.getExhibitorList().getDisplay().sc.get(2)) || mFunctionName[position].equals(information.getExhibitorList().getDisplay().tc.get(2))) {
 				StatService.onEvent(mContext, EVENTID + "SearchByHall", "pass", 1);
 				SystemMethod.trackViewLog(mContext, 100, "Page", "SearchByHall", null, null);
-				intent = new Intent(mContext, FloorListActivity.class);
-				intent.putExtra("Title", mFunctionName[position]);
-				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				if (SystemMethod.getSharedPreferences(mContext, "DeviceType").equals("Pad")) {
-					((Activity) mContext).overridePendingTransition(R.animator.fade_in, R.animator.fade_out);
-				}
+//				intent = new Intent(mContext, FloorListActivity.class);
+//				intent.putExtra("Title", mFunctionName[position]);
+//				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//				if (SystemMethod.getSharedPreferences(mContext, "DeviceType").equals("Pad")) {
+//					((Activity) mContext).overridePendingTransition(R.animator.fade_in, R.animator.fade_out);
+//				}
 			} else if (mFunctionName[position].equals(information.getExhibitorList().getDisplay().en.get(3)) || mFunctionName[position].equals(information.getExhibitorList().getDisplay().sc.get(3))
 					|| mFunctionName[position].equals(information.getExhibitorList().getDisplay().tc.get(3))) {
 				StatService.onEvent(mContext, EVENTID + "SearchByRegion", "pass", 1);

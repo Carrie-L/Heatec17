@@ -94,16 +94,6 @@
             android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
         <activity
-            android:name="com.adsale.HEATEC.activity.ScaleImageActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustPan" >
-        </activity>
-        <activity
-            android:name="com.adsale.HEATEC.activity.PadScaleImageActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustPan" >
-        </activity>
-        <activity
             android:name="com.adsale.HEATEC.activity.ExhibitorActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
             android:windowSoftInputMode="stateHidden|adjustPan" >

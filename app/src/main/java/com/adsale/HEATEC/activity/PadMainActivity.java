@@ -246,9 +246,6 @@ public class PadMainActivity extends AppCompatActivity implements MainViewModel.
         } else if (strBD_TJ.equals("ExhibitorList")) {// 参展商名单
             intent = new Intent(mContext, ExhibitorActivity.class);
 
-        } else if (strBD_TJ.equals("HallMap")) {// 平面图
-            intent = new Intent(mContext, MapFloorListActivity.class);
-
         } else if (strBD_TJ.equals("News")) {// 新闻
             intent = new Intent(mContext, NewsActivity.class);
 

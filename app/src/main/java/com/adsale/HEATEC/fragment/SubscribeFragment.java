@@ -34,7 +34,6 @@ import com.adsale.HEATEC.database.model.clsMainIcon;
 import com.adsale.HEATEC.util.LogUtil;
 import com.adsale.HEATEC.util.SystemMethod;
 import com.adsale.HEATEC.util.network.Configure;
-import com.adsale.HEATEC.util.network.NetworkHelper;
 import com.baidu.mobstat.StatService;
 
 public class SubscribeFragment extends BaseFragment {
@@ -53,7 +52,7 @@ public class SubscribeFragment extends BaseFragment {
 
 	@Override
 	public View initView(LayoutInflater inflater) {
-		mBaseView = inflater.inflate(R.layout.f_subscribe, null);
+		mBaseView = inflater.inflate(R.layout.activity_subscribe, null);
 		mContext = getActivity();
 
 		findView();

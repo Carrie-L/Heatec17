@@ -14,8 +14,11 @@ import retrofit2.http.Path;
  * Created by Carrie on 2017/9/25.
  */
 
-public interface DownClient {
+public interface NetworkClient {
 
+    /**
+     * in LoadingActivity
+     */
     @Headers(NetworkHelper.HEADER_SOAP_ACTION_MASTER)
     @POST(NetworkHelper.GetMaster)
     Observable<Response<ResponseBody>> getMaster(@Body RequestBody requestBody);
@@ -25,6 +28,14 @@ public interface DownClient {
 
     @GET(NetworkHelper.DOWN_WEBCONTENT_URL)
     Observable<Response<ResponseBody>> downWebContent(@Path("fileName") String fileName);
+
+
+    /**
+     * in SubscribeActivity
+     * @param langType eng||trad||simp
+     */
+    @POST(Configure.Subscribe_URL)
+    Observable<Response<ResponseBody>> onSubscribe(@Path("langType") String langType, @Body RequestBody requestBody);
 
 
 }

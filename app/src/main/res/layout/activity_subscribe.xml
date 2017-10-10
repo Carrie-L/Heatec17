@@ -1,146 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white" >
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.adsale.HEATEC.view.TitleView
-        android:id="@+id/titleView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" />
+    <data>
 
-    <ScrollView
-        android:id="@+id/RegisterView"
+        <variable
+            name="aty"
+            type="com.adsale.HEATEC.activity.SubscribeActivity" />
+
+    </data>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/titleView1"
-        android:fadingEdge="none"
-        android:overScrollMode="never" >
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ccc"
+            android:padding="5dp"
+            android:text="@string/subscribe_str001" />
+
+        <TextView
+            style="@style/subscribe_text_style"
+            android:text="@string/subscribe_str002" />
+
+        <EditText
+            android:id="@+id/et_company"
+            style="@style/subscribe_edit_style"
+            android:inputType="text"
+            android:maxLength="100"
+            android:text="@={aty.company}" />
+
+        <TextView
+            style="@style/subscribe_text_style"
+            android:text="@string/subscribe_str003" />
+
+        <EditText
+            android:id="@+id/et_name"
+            style="@style/subscribe_edit_style"
+            android:inputType="text"
+            android:maxLength="50"
+            android:text="@={aty.name}" />
+
+        <TextView
+            style="@style/subscribe_text_style"
+            android:text="@string/register_str004" />
+
+        <EditText
+            android:id="@+id/et_email"
+            style="@style/subscribe_edit_style"
+            android:inputType="textEmailAddress"
+            android:maxLength="50"
+            android:text="@={aty.email}" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="15dp" >
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:background="#ccc"
-                android:padding="5dp"
-                android:text="@string/subscribe_str001" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_below="@+id/textView2"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/subscribe_str002" />
-
-            <EditText
-                android:id="@+id/txtCompany"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/textView3"
-                android:layout_below="@+id/textView3"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/edittext_bg"
-                android:ems="10"
-                android:inputType="text"
-                android:nextFocusDown="@+id/txtName"
-                android:padding="5dp" >
-            </EditText>
-
-            <TextView
-                android:id="@+id/TextView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/txtCompany"
-                android:layout_below="@+id/txtCompany"
-                android:layout_marginTop="10dp"
-                android:text="@string/subscribe_str003" />
-
-            <EditText
-                android:id="@+id/txtName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/TextView4"
-                android:layout_alignRight="@+id/txtCompany"
-                android:layout_below="@+id/TextView4"
-                android:background="@drawable/edittext_bg"
-                android:ems="10"
-                android:inputType="text"
-                android:nextFocusDown="@+id/txtEmail"
-                android:padding="5dp" />
-
-            <TextView
-                android:id="@+id/TextView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/txtName"
-                android:layout_below="@+id/txtName"
-                android:layout_marginTop="10dp"
-                android:text="@string/register_str004" />
-
-            <EditText
-                android:id="@+id/txtEmail"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/TextView4"
-                android:layout_alignRight="@+id/txtName"
-                android:layout_below="@+id/TextView5"
-                android:layout_centerVertical="true"
-                android:background="@drawable/edittext_bg"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                android:padding="5dp" >
-            </EditText>
-
-            <View
-                android:id="@+id/view1"
-                android:layout_width="1dp"
-                android:layout_height="1dp"
-                android:layout_below="@+id/txtEmail"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp" />
+            android:layout_marginTop="24dp"
+            android:gravity="center_horizontal">
 
             <Button
                 android:id="@+id/btnSend"
                 android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/view1"
-                android:layout_marginRight="10dp"
-                android:layout_toLeftOf="@+id/view1"
+                android:layout_height="48dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
                 android:background="@drawable/btn_bg"
+                android:onClick="@{()->aty.onSend()}"
                 android:text="@string/reg_submit"
-                android:textColor="@drawable/btn_text_color" />
+                android:textColor="#fff" />
 
             <Button
                 android:id="@+id/btnReset"
                 android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/view1"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/view1"
+                android:layout_height="48dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@+id/btnSend"
+                android:layout_toRightOf="@+id/btnSend"
                 android:background="@drawable/btn_bg"
+                android:onClick="@{()->aty.onReset()}"
                 android:text="@string/reg_reset"
-                android:textColor="@drawable/btn_text_color" />
-
-            <TextView
-                android:id="@+id/txtPrivacy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignRight="@+id/txtEmail"
-                android:layout_below="@+id/btnReset"
-                android:layout_marginTop="20dp"
-                android:text="@string/subscribe_str005"
-                android:textColor="#ff0000" />
+                android:textColor="#fff" />
         </RelativeLayout>
-    </ScrollView>
 
-</RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:onClick="@{()->aty.onPrivacy()}"
+            android:text="@string/subscribe_str005"
+            android:textColor="#ff0000" />
+
+    </LinearLayout>
+
+</layout>

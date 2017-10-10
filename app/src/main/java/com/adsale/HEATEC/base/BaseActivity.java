@@ -8,11 +8,8 @@ import android.databinding.ObservableField;
 import android.databinding.ObservableFloat;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.FrameLayout;
 
 import com.adsale.HEATEC.App;
@@ -22,7 +19,6 @@ import com.adsale.HEATEC.activity.MainActivity;
 import com.adsale.HEATEC.dao.DBHelper;
 import com.adsale.HEATEC.databinding.BaseBinding;
 import com.adsale.HEATEC.util.SystemMethod;
-import com.facebook.datasource.BaseDataSubscriber;
 
 /**
  * Created by Carrie on 2017/9/27.
