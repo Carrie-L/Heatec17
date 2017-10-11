@@ -37,13 +37,13 @@ public class ListBindings {
     }
 
 //    @BindingAdapter("app:exhibitors")
-//    @BindingAdapter({"exhibitors"})
-//    public static void setExhibitors(RecyclerView recyclerView, ArrayList<Exhibitor> list) {
-//        ExhibitorAdapter adapter = (ExhibitorAdapter) recyclerView.getAdapter();
-//        if (adapter != null) {
-//            adapter.setList(list);
-//        }
-//    }
+    @BindingAdapter({"exhibitors"})
+    public static void setExhibitors(RecyclerView recyclerView, ArrayList<Exhibitor> list) {
+        ExhibitorAdapter adapter = (ExhibitorAdapter) recyclerView.getAdapter();
+        if (adapter != null) {
+            adapter.setList(list);
+        }
+    }
 
     @BindingAdapter({"viewAspectRatio"})
     public static void setViewAspectRatio(SimpleDraweeView view,float aspectRatio){

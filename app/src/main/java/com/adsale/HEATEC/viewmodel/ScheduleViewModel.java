@@ -1,8 +1,7 @@
 package com.adsale.HEATEC.viewmodel;
 
-import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.databinding.BaseObservable;
 import android.databinding.ObservableArrayList;
 import android.databinding.ObservableBoolean;
@@ -11,18 +10,12 @@ import android.databinding.ObservableInt;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.DatePicker;
 import android.widget.LinearLayout;
-import android.widget.TimePicker;
-import android.widget.Toast;
 
-import com.adsale.HEATEC.R;
+import com.adsale.HEATEC.activity.ExhibitorListActivity;
 import com.adsale.HEATEC.adapter.ScheduleAdapter;
 import com.adsale.HEATEC.dao.ScheduleInfo;
 import com.adsale.HEATEC.data.DataRepository;
-import com.adsale.HEATEC.util.Constant;
 import com.adsale.HEATEC.util.LogUtil;
 
 import java.util.ArrayList;
@@ -145,6 +138,9 @@ public class ScheduleViewModel extends BaseObservable {
 
     public void onAdd(){
         LogUtil.i(TAG,"onAdd: dateIndex="+dateIndex.get());
+        Intent intent=new Intent(mContext, ExhibitorListActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mContext.startActivity(intent);
     }
 
 
