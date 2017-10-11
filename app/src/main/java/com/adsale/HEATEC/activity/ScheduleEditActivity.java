@@ -1,68 +1,80 @@
-package com.adsale.HEATEC.activity;
-
-import android.content.pm.ActivityInfo;
-import android.content.res.Configuration;
-import android.support.v4.app.Fragment;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.View.OnClickListener;
-
-import com.adsale.HEATEC.R;
-import com.adsale.HEATEC.base.BaseFragmentActivity;
-import com.adsale.HEATEC.fragment.ScheduleEditFragment;
-import com.adsale.HEATEC.util.SystemMethod;
-import com.adsale.HEATEC.view.TitleView;
-
-public class ScheduleEditActivity extends BaseFragmentActivity  {
-
-	public static String TAG = "ScheduleEditActivity";
-
-	private String mDeviceType;
-
-	@Override
-	protected Fragment createFragment() {
-		mContext = getApplicationContext();
-		mDeviceType = SystemMethod.getSharedPreferences(mContext, "DeviceType");
-
-		String title = getString(R.string.title_agenda);
-		TitleView mTitleView = (TitleView) findViewById(R.id.titleView1);
-		mTitleView.setTitle(title);
-		mTitleView.setOnBackListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				finish();
-				if (mDeviceType.equals("Pad")) {
-					overridePendingTransition(R.animator.fade_in, R.animator.fade_out);
-				}
-			}
-		}); if (mDeviceType.equals("Pad")) {
-			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-		}
-
-		return new ScheduleEditFragment();
-	}
-
-	@Override
-	public void onConfigurationChanged(Configuration newConfig) {
-		super.onConfigurationChanged(newConfig);
-		if (mDeviceType.equals("Pad")) {
-			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-		} else {
-			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-		}
-	}
-
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			finish();
-			if (mDeviceType.equals("Pad")) {
-				overridePendingTransition(R.animator.fade_in, R.animator.fade_out);
-			}
-			return false;
-		}
-		return super.onKeyDown(keyCode, event);
-	}
-	
-
-}
+//package com.adsale.HEATEC.activity;
+//
+//import android.content.DialogInterface;
+//import android.content.Intent;
+//import android.os.Bundle;
+//
+//import com.adsale.HEATEC.R;
+//import com.adsale.HEATEC.base.BaseActivity;
+//import com.adsale.HEATEC.dao.Exhibitor;
+//import com.adsale.HEATEC.util.Constant;
+//import com.adsale.HEATEC.viewmodel.ScheduleViewModel;
+//
+///**
+// * 日程表 add or edit
+// */
+//public class ScheduleEditActivity extends BaseActivity implements ScheduleViewModel.ScheduleEditListenr {
+//
+//    private ScheduleViewModel mScheduleModel;
+//
+//    @Override
+//    protected void initView() {
+//        ActivityScheduleItemBinding binding = ActivityScheduleItemBinding.inflate(getLayoutInflater(), mBaseFrameLayout, true);
+//
+//        Bundle bundle = getIntent().getExtras();
+//        long id = bundle.getLong("id");
+//        int dateIndex = bundle.getInt("dateIndex");
+//
+//        if (id == 0) {
+//            mScheduleModel = new ScheduleViewModel(getApplicationContext(), dateIndex);
+//        } else {
+//            mScheduleModel = new ScheduleViewModel(getApplicationContext(), id);
+//        }
+//        binding.setScheduleModel(mScheduleModel);
+//    }
+//
+//    @Override
+//    protected void initData() {
+//        mScheduleModel.setScheduleEditListener(this);
+//
+//        Intent data=getIntent();
+//        Exhibitor exhibitor = data.getParcelableExtra(Constant.EXHIBITOR);
+//        if(exhibitor!=null){
+//            mScheduleModel.dateIndex.set(data.getIntExtra("dateIndex",0));
+//            mScheduleModel.setCompanyId(exhibitor.getCompanyID());
+//            mScheduleModel.etTitle.set(exhibitor.getCompanyName());
+//            mScheduleModel.etLocation.set(exhibitor.getBoothNo());
+//            mScheduleModel.etNote.set(exhibitor.getNote());
+//        }
+//
+//    }
+//
+//    @Override
+//    public void onSameTimeSave() {
+//        AppUtil.showAlertDialog(this, getString(R.string.ask_schedule), new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                mScheduleModel.insert();
+//            }
+//        });
+//    }
+//
+//    @Override
+//    public void toExhibitorDtl(String companyId) {
+//        Bundle bundle = new Bundle();
+//        bundle.putString(Constant.COMPANY_ID, companyId);
+//        intent(ExhibitorDtlActivity.class, bundle);
+//    }
+//
+//
+//    @Override
+//    public void onFinish() {
+//        finish();
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        mScheduleModel.onActivityDestroyed();
+//    }
+//}

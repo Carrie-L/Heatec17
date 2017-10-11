@@ -85,8 +85,8 @@
                 android:onClick="@{()->aty.onReset()}"
                 android:text="@string/reg_reset"
                 android:textColor="#fff" />
-        </RelativeLayout>
 
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -98,6 +98,8 @@
             android:onClick="@{()->aty.onPrivacy()}"
             android:text="@string/subscribe_str005"
             android:textColor="#ff0000" />
+
+
 
     </LinearLayout>
 

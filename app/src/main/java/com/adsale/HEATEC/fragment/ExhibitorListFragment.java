@@ -1,7 +1,6 @@
 package com.adsale.HEATEC.fragment;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -12,7 +11,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -25,7 +23,6 @@ import android.widget.TextView;
 import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.App;
 import com.adsale.HEATEC.activity.ExhibitorDetailActivity;
-import com.adsale.HEATEC.activity.ScheduleEditActivity;
 import com.adsale.HEATEC.adapter.ExhibitorAdapter;
 import com.adsale.HEATEC.base.BaseFragment;
 import com.adsale.HEATEC.database.ExhibitorDBHelper;
@@ -259,14 +256,14 @@ public class ExhibitorListFragment extends BaseFragment {
 
 					LogUtil.i(TAG, "mAddSchedule: setResult(Activity.RESULT_OK");
 
-					Intent intent = new Intent(mContext, ScheduleEditActivity.class);
-					intent.putExtra("CompanyID", oItem.getCompanyID());
-					intent.putExtra("ExhibitorName", oItem.getCompanyName(SystemMethod.getCurLanguage(mContext)));
-					intent.putExtra("currentItem", currentItem);
-					startActivity(intent);
-					Activity oActivity = getActivity();
-					oActivity.setResult(Activity.RESULT_OK, intent);
-					oActivity.finish();
+//					Intent intent = new Intent(mContext, ScheduleEditActivity.class);
+//					intent.putExtra("CompanyID", oItem.getCompanyID());
+//					intent.putExtra("ExhibitorName", oItem.getCompanyName(SystemMethod.getCurLanguage(mContext)));
+//					intent.putExtra("currentItem", currentItem);
+//					startActivity(intent);
+//					Activity oActivity = getActivity();
+//					oActivity.setResult(Activity.RESULT_OK, intent);
+//					oActivity.finish();
 				} else {
 
 					LogUtil.i(TAG, "Intent: ExhibitorDetailActivity");

@@ -3,7 +3,7 @@ package com.adsale.HEATEC.database;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.adsale.HEATEC.database.model.clsScheduleInfo;
+import com.adsale.HEATEC.dao.ScheduleInfo;
 
 import sanvio.libs.dbhelper.DatabaseHelper;
 import android.content.ContentValues;
@@ -22,8 +22,8 @@ public class ScheduleInfoDBHelper extends DatabaseHelper {
 		super(context);
 	}
 
-	public clsScheduleInfo getSchedule(int ID) {
-		clsScheduleInfo oClsScheduleInfo = null;
+	public ScheduleInfo getSchedule(int ID) {
+		ScheduleInfo oScheduleInfo = null;
 		SQLiteDatabase db = this.getReadableDatabase();
 		String strSql = strBaseSQL;
 		strSql += " and ScheduleID = " + ID;
@@ -31,7 +31,7 @@ public class ScheduleInfoDBHelper extends DatabaseHelper {
 			Cursor cursor = db.rawQuery(strSql, null);
 			if (cursor.moveToLast()) {
 
-				oClsScheduleInfo = new clsScheduleInfo(cursor);
+//				oScheduleInfo = new ScheduleInfo(cursor);
 
 			}
 			cursor.close();
@@ -42,19 +42,19 @@ public class ScheduleInfoDBHelper extends DatabaseHelper {
 				db.close();
 			}
 		}
-		return oClsScheduleInfo;
+		return oScheduleInfo;
 	}
 
-	public List<clsScheduleInfo> getScheduleInfoList(String pCompanyID) {
-		List<clsScheduleInfo> ScheduleInfos = null;
+	public List<ScheduleInfo> getScheduleInfoList(String pCompanyID) {
+		List<ScheduleInfo> ScheduleInfos = null;
 		SQLiteDatabase db = this.getReadableDatabase();
 		ScheduleInfos = getScheduleInfoList(pCompanyID, db);
 		db.close();
 		return ScheduleInfos;
 	}
 
-	public List<clsScheduleInfo> getScheduleInfoList(String pCompanyID, SQLiteDatabase db) {
-		List<clsScheduleInfo> ScheduleInfos = new ArrayList<clsScheduleInfo>();
+	public List<ScheduleInfo> getScheduleInfoList(String pCompanyID, SQLiteDatabase db) {
+		List<ScheduleInfo> ScheduleInfos = new ArrayList<ScheduleInfo>();
 		String strSql = strBaseSQL;
 		if (!TextUtils.isEmpty(pCompanyID)) {
 			strSql += " and CompanyID = '" + pCompanyID + "'";
@@ -64,14 +64,14 @@ public class ScheduleInfoDBHelper extends DatabaseHelper {
 		return ScheduleInfos;
 	}
 
-	public List<clsScheduleInfo> Query(String pSQL) {
+	public List<ScheduleInfo> Query(String pSQL) {
 		SQLiteDatabase db = this.getReadableDatabase();
-		List<clsScheduleInfo> ocolScheduleInfo = new ArrayList<clsScheduleInfo>();
+		List<ScheduleInfo> ocolScheduleInfo = new ArrayList<ScheduleInfo>();
 		try {
 			Cursor cursor = db.rawQuery(pSQL, null);
 			if (cursor != null && cursor.getCount() > 0) {
 				while (cursor.moveToNext()) {
-					ocolScheduleInfo.add(new clsScheduleInfo(cursor));
+//					ocolScheduleInfo.add(new ScheduleInfo(cursor));
 				}
 			}
 			cursor.close();
@@ -86,17 +86,17 @@ public class ScheduleInfoDBHelper extends DatabaseHelper {
 		return ocolScheduleInfo;
 	}
 
-	public boolean modify(clsScheduleInfo pClsScheduleInfo) {
+	public boolean modify(ScheduleInfo pScheduleInfo) {
 		Cursor cursor = null;
 		Boolean result = true;
 		SQLiteDatabase db = getWritableDatabase();
-		if (pClsScheduleInfo != null) {
+		if (pScheduleInfo != null) {
 			try {
-				cursor = db.rawQuery(strBaseSQL + " and ScheduleID=" + pClsScheduleInfo.getScheduleID(), null);
+				cursor = db.rawQuery(strBaseSQL + " and ScheduleID=" + pScheduleInfo.getScheduleID(), null);
 				if (cursor != null && !cursor.moveToFirst()) {
-					result = Insert(pClsScheduleInfo, db);
+					result = Insert(pScheduleInfo, db);
 				} else if (cursor != null && cursor.moveToFirst()) {
-					result = Update(pClsScheduleInfo, db);
+					result = Update(pScheduleInfo, db);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -109,14 +109,14 @@ public class ScheduleInfoDBHelper extends DatabaseHelper {
 		return result;
 	}
 
-	private boolean Insert(clsScheduleInfo pclsScheduleInfo, SQLiteDatabase db) {
+	private boolean Insert(ScheduleInfo pScheduleInfo, SQLiteDatabase db) {
 		boolean result = false;
-		if (pclsScheduleInfo != null && db != null) {
+		if (pScheduleInfo != null && db != null) {
 			try {
 				ContentValues cv;
 				cv = new ContentValues();
-				cv.put("ScheduleID", pclsScheduleInfo.getScheduleID());
-				FillScheduleInfo(pclsScheduleInfo, cv);
+				cv.put("ScheduleID", pScheduleInfo.getScheduleID());
+				FillScheduleInfo(pScheduleInfo, cv);
 				result = db.insert(DBTableBame, null, cv) != -1;
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -126,13 +126,13 @@ public class ScheduleInfoDBHelper extends DatabaseHelper {
 		return result;
 	}
 
-	private boolean Update(clsScheduleInfo pClsScheduleInfo, SQLiteDatabase db) {
+	private boolean Update(ScheduleInfo pScheduleInfo, SQLiteDatabase db) {
 		boolean result = false;
-		if (pClsScheduleInfo != null && db != null) {
+		if (pScheduleInfo != null && db != null) {
 			try {
 				ContentValues cv = new ContentValues();
-				FillScheduleInfo(pClsScheduleInfo, cv);
-				result = db.update(DBTableBame, cv, "ScheduleID=?", new String[] { pClsScheduleInfo.getScheduleID() + "" }) > 0;
+				FillScheduleInfo(pScheduleInfo, cv);
+				result = db.update(DBTableBame, cv, "ScheduleID=?", new String[] { pScheduleInfo.getScheduleID() + "" }) > 0;
 			} catch (Exception e) {
 				e.printStackTrace();
 				result = false;
@@ -174,14 +174,14 @@ public class ScheduleInfoDBHelper extends DatabaseHelper {
 		return result;
 	}
 
-	private void FillScheduleInfo(clsScheduleInfo pClsScheduleInfo, ContentValues cv) {
-		cv.put("Title", pClsScheduleInfo.getTitle());
-		cv.put("Note", pClsScheduleInfo.getNote());
-		cv.put("Location", pClsScheduleInfo.getLocation());
-		cv.put("CompanyID", pClsScheduleInfo.getCompanyID());
-		cv.put("StartTime", pClsScheduleInfo.getStartTime());
-		cv.put("Length", pClsScheduleInfo.getLength());
-		cv.put("Allday", pClsScheduleInfo.getAllday());
+	private void FillScheduleInfo(ScheduleInfo pScheduleInfo, ContentValues cv) {
+		cv.put("Title", pScheduleInfo.getTitle());
+		cv.put("Note", pScheduleInfo.getNote());
+		cv.put("Location", pScheduleInfo.getLocation());
+		cv.put("CompanyID", pScheduleInfo.getCompanyID());
+		cv.put("StartTime", pScheduleInfo.getStartTime());
+		cv.put("Length", pScheduleInfo.getLength());
+//		cv.put("Allday", pScheduleInfo.getAllday());
 	}
 
 	public Boolean check(String pCompanyID, String pStartTime) {

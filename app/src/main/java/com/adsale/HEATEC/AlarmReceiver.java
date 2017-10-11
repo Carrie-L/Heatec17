@@ -15,6 +15,7 @@ import android.support.v4.app.NotificationCompat;
 
 import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.activity.LoadingActivity;
+import com.adsale.HEATEC.dao.ScheduleInfo;
 import com.adsale.HEATEC.database.ScheduleInfoDBHelper;
 import com.adsale.HEATEC.database.model.clsScheduleInfo;
 
@@ -31,7 +32,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 		if (pIntent.getAction().equalsIgnoreCase(ACTION)
 				&& pIntent.hasExtra("ScheduleID")) {
 			mDbHelper = new ScheduleInfoDBHelper(context);
-			clsScheduleInfo oclClsScheduleInfo = mDbHelper.getSchedule(pIntent
+			ScheduleInfo oclClsScheduleInfo = mDbHelper.getSchedule(pIntent
 					.getIntExtra("ScheduleID", 0));
 			if (oclClsScheduleInfo == null)
 				return;

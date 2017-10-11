@@ -9,6 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * Created by Carrie on 2017/9/25.
@@ -34,8 +35,8 @@ public interface NetworkClient {
      * in SubscribeActivity
      * @param langType eng||trad||simp
      */
-    @POST(Configure.Subscribe_URL)
-    Observable<Response<ResponseBody>> onSubscribe(@Path("langType") String langType, @Body RequestBody requestBody);
+    @POST(Configure.Subscribe_LAST_URL)
+    Observable<Response<ResponseBody>> onSubscribe(@Query("lang") String lang, @Body RequestBody requestBody);
 
 
 }

@@ -49,6 +49,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Response;
 
 import static com.adsale.HEATEC.App.RootDir;
+import static com.adsale.HEATEC.App.isTablet;
 import static com.adsale.HEATEC.util.FileUtil.createFile;
 
 public class LoadingActivity extends AppCompatActivity {
@@ -57,7 +58,6 @@ public class LoadingActivity extends AppCompatActivity {
 
     public final ObservableBoolean isShowLang = new ObservableBoolean(false);
     public final ObservableBoolean isShowPB = new ObservableBoolean(false);// progressBar
-    private String oDeviceType;
     private NetworkClient mDownClient;
     private ArrayList<MainIcon> mainIcons;
     private ArrayList<WebContent> webContents;
@@ -90,10 +90,10 @@ public class LoadingActivity extends AppCompatActivity {
             isShowLang.set(true);
             getDeviceInfo();
         } else {
-            oDeviceType = SystemMethod.getSharedPreferences(getApplicationContext(), "DeviceType");
             setRequestedOrientation();
             startDownload();
         }
+
     }
 
     public void selectLang(int language) {
@@ -205,10 +205,10 @@ public class LoadingActivity extends AppCompatActivity {
                     public void onError(@NonNull Throwable e) {
                         LogUtil.e(TAG, "getMaster -- onError=" + e.getMessage());
                         isShowPB.set(false);
-                        if (oDeviceType.equals("Phone")) {
-                            intent = new Intent(LoadingActivity.this, MainActivity.class);
-                        } else {
+                        if (isTablet) {
                             intent = new Intent(LoadingActivity.this, PadMainActivity.class);
+                        } else {
+                            intent = new Intent(LoadingActivity.this, MainActivity.class);
                         }
                         startActivity(intent);
                         finish();
@@ -220,10 +220,10 @@ public class LoadingActivity extends AppCompatActivity {
                         mEndTime = System.currentTimeMillis();
                         isShowPB.set(false);
                         sp_config.edit().putBoolean("isFirstRunning", false).apply();
-                        if (oDeviceType.equals("Phone")) {
-                            intent = new Intent(LoadingActivity.this, MainActivity.class);
-                        } else {
+                        if (isTablet) {
                             intent = new Intent(LoadingActivity.this, PadMainActivity.class);
+                        } else {
+                            intent = new Intent(LoadingActivity.this, MainActivity.class);
                         }
                         startActivity(intent);
                         finish();
@@ -316,10 +316,10 @@ public class LoadingActivity extends AppCompatActivity {
      * 设置横竖屏方向
      */
     private void setRequestedOrientation() {
-        if (oDeviceType.equals("Phone")) {
-            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);// 竖
-        } else {
+        if (isTablet) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);// 横
+        } else {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);// 竖
         }
     }
 
@@ -341,7 +341,7 @@ public class LoadingActivity extends AppCompatActivity {
         int height = size.y;
         LogUtil.i(TAG, "test 3rd 像素：width= " + width + ", height= " + height);
 
-        if (oDeviceType != null && oDeviceType.equals("Pad") && (width < height)) {// 如果是平板，且宽度小于高度，则交换两者的值
+        if (isTablet && (width < height)) {// 如果是平板，且宽度小于高度，则交换两者的值
             width = width ^ height;
             height = width ^ height;
             width = width ^ height;
@@ -353,12 +353,6 @@ public class LoadingActivity extends AppCompatActivity {
     }
 
     private void setupDeviceType() {
-        if (getResources().getBoolean(R.bool.isTablet)) {
-            oDeviceType = "Pad";
-        } else {
-            oDeviceType = "Phone";
-        }
-        SystemMethod.setSharedPreferences(getApplicationContext(), "DeviceType", oDeviceType);
         setRequestedOrientation();
     }
 

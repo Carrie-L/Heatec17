@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.adapter.ScheduleInfoAdapter;
+import com.adsale.HEATEC.dao.ScheduleInfo;
 import com.adsale.HEATEC.database.ScheduleInfoDBHelper;
 import com.adsale.HEATEC.database.model.clsExhibitor;
 import com.adsale.HEATEC.database.model.clsScheduleInfo;
@@ -72,8 +73,8 @@ public class ScheduleInfoView extends RelativeLayout {
 	public void setData(clsExhibitor exhibitor) {
 		mClsExhibitor = exhibitor;
 		listView.setEmptyView(txtNoData);
-		List<clsScheduleInfo> oColScheduleInfos = new ScheduleInfoDBHelper(mContext).getScheduleInfoList(mClsExhibitor.getCompanyID());
-		mAdapter = new ScheduleInfoAdapter(mContext, oColScheduleInfos);
+//		List<ScheduleInfo> oColScheduleInfos = new ScheduleInfoDBHelper(mContext).getScheduleInfoList(mClsExhibitor.getCompanyID());
+//		mAdapter = new ScheduleInfoAdapter(mContext, oColScheduleInfos);
 		listView.setAdapter(mAdapter);
 
 		listView.setOnItemClickListener(mItemClickListener);
@@ -81,7 +82,7 @@ public class ScheduleInfoView extends RelativeLayout {
 	}
 
 	public void ResetData() {
-		List<clsScheduleInfo> oColScheduleInfos = new ScheduleInfoDBHelper(mContext).getScheduleInfoList(mClsExhibitor.getCompanyID());
+		List<ScheduleInfo> oColScheduleInfos = new ScheduleInfoDBHelper(mContext).getScheduleInfoList(mClsExhibitor.getCompanyID());
 		mAdapter = new ScheduleInfoAdapter(mContext, oColScheduleInfos);
 		listView.setAdapter(mAdapter);
 	}

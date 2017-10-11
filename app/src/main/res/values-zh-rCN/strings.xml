@@ -9,7 +9,7 @@
         <string name="prereg_end">观众预先登记已经结束，请携带公司名片前往展会现场办理登记手续。谢谢！</string>
         
          <!--  -->
-    <string name="thx_yd">感谢您的订阅！</string>
+    <string name="thx_dy">感谢您的订阅！</string>
     <string name="connection_time_out">连接超时</string>
     <!--  -->
     <string-array name="main_nav">

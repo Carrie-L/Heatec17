@@ -2,11 +2,9 @@ package com.adsale.HEATEC.fragment;
 
 import java.io.File;
 
-import sanvio.libs.util.DialogUtils;
 import sanvio.libs.util.DownLoadUtils;
 import sanvio.libs.util.FileUtils;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -32,6 +30,7 @@ import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.App;
 import com.adsale.HEATEC.base.BaseFragment;
 import com.adsale.HEATEC.database.WebContentDBHelper;
+import com.adsale.HEATEC.util.DialogUtil;
 import com.adsale.HEATEC.util.LogUtil;
 import com.adsale.HEATEC.util.SystemMethod;
 import com.adsale.HEATEC.util.network.Configure;
@@ -179,7 +178,7 @@ public class RegisterUrlFragment extends BaseFragment implements
 
 		@Override
 		protected void onPreExecute() {
-			mProgressDialog = DialogUtils.CreateProgressDialog(mContext,
+			mProgressDialog = DialogUtil.createProgressDialog(mContext,
 					R.string.Registering_MSg);
 			mProgressDialog.show();
 		}

@@ -17,7 +17,6 @@ public class NetworkHelper {
 
 	public static RequestBody getMasterRequestBody() {
 		return RequestBody.create(MEDIA_TYPE_XML, getMasterSoapBody());
-
 	}
 
 	private static String getMasterSoapBody() {

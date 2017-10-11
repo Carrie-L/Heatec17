@@ -1,14 +1,19 @@
 package com.adsale.HEATEC.util;
 
+import android.content.Context;
 import android.databinding.BindingAdapter;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 
+import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.adapter.ExhibitorAdapter;
 import com.adsale.HEATEC.base.AdsaleBaseAdapter;
 import com.adsale.HEATEC.dao.Exhibitor;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.ArrayList;
+
+import static android.R.attr.y;
 
 /**
  * Created by Carrie on 2017/8/11.
@@ -20,6 +25,7 @@ import java.util.ArrayList;
  */
 
 public class ListBindings {
+    private static final String TAG="ListBindings";
 
 //    @BindingAdapter("app:items")
     @BindingAdapter({"items"})
@@ -42,6 +48,13 @@ public class ListBindings {
     @BindingAdapter({"viewAspectRatio"})
     public static void setViewAspectRatio(SimpleDraweeView view,float aspectRatio){
         view.setAspectRatio(aspectRatio);
+    }
+
+    @BindingAdapter({"circle"})
+    public static void setCircle(TextView tv, boolean currItem){
+        LogUtil.i(TAG,"setBackground:currItem="+currItem);
+        tv.setBackgroundResource(currItem? R.drawable.oval_black:R.drawable.oval_white);
+        tv.setTextColor(currItem? tv.getResources().getColor(R.color.white):tv.getResources().getColor(R.color.black));
     }
 
 

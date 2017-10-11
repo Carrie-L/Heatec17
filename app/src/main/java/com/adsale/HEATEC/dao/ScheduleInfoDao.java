@@ -24,13 +24,14 @@ public class ScheduleInfoDao extends AbstractDao<ScheduleInfo, Long> {
     */
     public static class Properties {
         public final static Property ScheduleID = new Property(0, Long.class, "ScheduleID", true, "SCHEDULE_ID");
-        public final static Property Title = new Property(1, String.class, "Title", false, "TITLE");
-        public final static Property Note = new Property(2, String.class, "Note", false, "NOTE");
+        public final static Property CompanyID = new Property(1, String.class, "CompanyID", false, "COMPANY_ID");
+        public final static Property Title = new Property(2, String.class, "Title", false, "TITLE");
         public final static Property Location = new Property(3, String.class, "Location", false, "LOCATION");
-        public final static Property CompanyID = new Property(4, String.class, "CompanyID", false, "COMPANY_ID");
+        public final static Property Day_Index = new Property(4, Integer.class, "Day_Index", false, "DAY__INDEX");
         public final static Property StartTime = new Property(5, String.class, "StartTime", false, "START_TIME");
         public final static Property Length = new Property(6, Integer.class, "Length", false, "LENGTH");
-        public final static Property Allday = new Property(7, Integer.class, "Allday", false, "ALLDAY");
+        public final static Property AllDay = new Property(7, Integer.class, "AllDay", false, "ALL_DAY");
+        public final static Property Note = new Property(8, String.class, "Note", false, "NOTE");
     };
 
 
@@ -47,13 +48,14 @@ public class ScheduleInfoDao extends AbstractDao<ScheduleInfo, Long> {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"SCHEDULE_INFO\" (" + //
                 "\"SCHEDULE_ID\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: ScheduleID
-                "\"TITLE\" TEXT," + // 1: Title
-                "\"NOTE\" TEXT," + // 2: Note
+                "\"COMPANY_ID\" TEXT," + // 1: CompanyID
+                "\"TITLE\" TEXT," + // 2: Title
                 "\"LOCATION\" TEXT," + // 3: Location
-                "\"COMPANY_ID\" TEXT," + // 4: CompanyID
+                "\"DAY__INDEX\" INTEGER," + // 4: Day_Index
                 "\"START_TIME\" TEXT," + // 5: StartTime
                 "\"LENGTH\" INTEGER," + // 6: Length
-                "\"ALLDAY\" INTEGER);"); // 7: Allday
+                "\"ALL_DAY\" INTEGER," + // 7: AllDay
+                "\"NOTE\" TEXT);"); // 8: Note
     }
 
     /** Drops the underlying database table. */
@@ -72,14 +74,14 @@ public class ScheduleInfoDao extends AbstractDao<ScheduleInfo, Long> {
             stmt.bindLong(1, ScheduleID);
         }
  
-        String Title = entity.getTitle();
-        if (Title != null) {
-            stmt.bindString(2, Title);
+        String CompanyID = entity.getCompanyID();
+        if (CompanyID != null) {
+            stmt.bindString(2, CompanyID);
         }
  
-        String Note = entity.getNote();
-        if (Note != null) {
-            stmt.bindString(3, Note);
+        String Title = entity.getTitle();
+        if (Title != null) {
+            stmt.bindString(3, Title);
         }
  
         String Location = entity.getLocation();
@@ -87,9 +89,9 @@ public class ScheduleInfoDao extends AbstractDao<ScheduleInfo, Long> {
             stmt.bindString(4, Location);
         }
  
-        String CompanyID = entity.getCompanyID();
-        if (CompanyID != null) {
-            stmt.bindString(5, CompanyID);
+        Integer Day_Index = entity.getDay_Index();
+        if (Day_Index != null) {
+            stmt.bindLong(5, Day_Index);
         }
  
         String StartTime = entity.getStartTime();
@@ -102,9 +104,14 @@ public class ScheduleInfoDao extends AbstractDao<ScheduleInfo, Long> {
             stmt.bindLong(7, Length);
         }
  
-        Integer Allday = entity.getAllday();
-        if (Allday != null) {
-            stmt.bindLong(8, Allday);
+        Integer AllDay = entity.getAllDay();
+        if (AllDay != null) {
+            stmt.bindLong(8, AllDay);
+        }
+ 
+        String Note = entity.getNote();
+        if (Note != null) {
+            stmt.bindString(9, Note);
         }
     }
 
@@ -119,13 +126,14 @@ public class ScheduleInfoDao extends AbstractDao<ScheduleInfo, Long> {
     public ScheduleInfo readEntity(Cursor cursor, int offset) {
         ScheduleInfo entity = new ScheduleInfo( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // ScheduleID
-            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // Title
-            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // Note
+            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // CompanyID
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // Title
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // Location
-            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // CompanyID
+            cursor.isNull(offset + 4) ? null : cursor.getInt(offset + 4), // Day_Index
             cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // StartTime
             cursor.isNull(offset + 6) ? null : cursor.getInt(offset + 6), // Length
-            cursor.isNull(offset + 7) ? null : cursor.getInt(offset + 7) // Allday
+            cursor.isNull(offset + 7) ? null : cursor.getInt(offset + 7), // AllDay
+            cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8) // Note
         );
         return entity;
     }
@@ -134,13 +142,14 @@ public class ScheduleInfoDao extends AbstractDao<ScheduleInfo, Long> {
     @Override
     public void readEntity(Cursor cursor, ScheduleInfo entity, int offset) {
         entity.setScheduleID(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
-        entity.setTitle(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setNote(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setCompanyID(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
+        entity.setTitle(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setLocation(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
-        entity.setCompanyID(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
+        entity.setDay_Index(cursor.isNull(offset + 4) ? null : cursor.getInt(offset + 4));
         entity.setStartTime(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
         entity.setLength(cursor.isNull(offset + 6) ? null : cursor.getInt(offset + 6));
-        entity.setAllday(cursor.isNull(offset + 7) ? null : cursor.getInt(offset + 7));
+        entity.setAllDay(cursor.isNull(offset + 7) ? null : cursor.getInt(offset + 7));
+        entity.setNote(cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8));
      }
     
     /** @inheritdoc */

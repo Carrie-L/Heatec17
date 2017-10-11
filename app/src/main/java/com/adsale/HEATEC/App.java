@@ -72,6 +72,8 @@ public class App extends Application {
 	public static DBHelper mDBHelper;
 	public static String DB_PATH = "";// 在手机里存放数据库的位置
 
+	public static boolean isTablet;
+
 
 	public synchronized void sendTracker(String category, String action) {
 		GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
@@ -86,6 +88,8 @@ public class App extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+
+		isTablet=getResources().getBoolean(R.bool.isTablet);
 
 		mOkHttpClient = new OkHttpClient.Builder().connectTimeout(10, TimeUnit.SECONDS).build();
 		

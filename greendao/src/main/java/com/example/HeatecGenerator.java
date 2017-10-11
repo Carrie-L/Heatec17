@@ -207,13 +207,14 @@ public class HeatecGenerator {
     private static void addScheduleInfo(Schema schema){
         Entity entity=schema.addEntity("ScheduleInfo");
         entity.addLongProperty("ScheduleID").primaryKey().autoincrement();
-        entity.addStringProperty("Title");
-        entity.addStringProperty("Note");
-        entity.addStringProperty("Location");
         entity.addStringProperty("CompanyID");
+        entity.addStringProperty("Title");
+        entity.addStringProperty("Location");
+        entity.addIntProperty("Day_Index");//start from 0
         entity.addStringProperty("StartTime");
         entity.addIntProperty("Length");
-        entity.addIntProperty("Allday");
+        entity.addIntProperty("AllDay");
+        entity.addStringProperty("Note");
     }
 
     private static void addUpdateDate(Schema schema){

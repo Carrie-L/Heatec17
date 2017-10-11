@@ -17,7 +17,8 @@ public class Configure {
 	public static final String Subscribe_CN_URL = "https://eform.adsale.com.hk/FormR/ContactUs/EnewsSub.aspx?showid=460&lang=trad&device=app&WAct=9105"; 
 	public static final String Subscribe_TW_URL = "https://eform.adsale.com.hk/FormR/ContactUs/EnewsSub.aspx?showid=460&lang=simp&device=app&WAct=9105";
 
-	public static final String Subscribe_URL = "https://eform.adsale.com.hk/FormR/ContactUs/EnewsSub.aspx?showid=460&lang={langType}&device=app&WAct=9105";
+	public static final String Subscribe_BASE_URL = "https://eform.adsale.com.hk/FormR/ContactUs/";
+	public static final String Subscribe_LAST_URL = "EnewsSub.aspx?showid=460&device=app&WAct=9105";//&lang={langType}
 
 
 	

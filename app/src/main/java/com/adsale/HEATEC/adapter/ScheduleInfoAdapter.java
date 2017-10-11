@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.adsale.HEATEC.R;
-import com.adsale.HEATEC.database.model.clsScheduleInfo;
+import com.adsale.HEATEC.dao.ScheduleInfo;
 import com.adsale.HEATEC.util.SystemMethod;
 
 import sanvio.libs.adapter.BasicAdapter;
@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class ScheduleInfoAdapter extends BasicAdapter {
-	private List<clsScheduleInfo> mDataList;
+	private List<ScheduleInfo> mDataList;
 
 	private Context mContext;
 	private LayoutInflater inflater;
@@ -27,13 +27,13 @@ public class ScheduleInfoAdapter extends BasicAdapter {
 		TextView txtStartTime;
 	}
 
-	public ScheduleInfoAdapter(Context c, List<clsScheduleInfo> list) {
+	public ScheduleInfoAdapter(Context c, List<ScheduleInfo> list) {
 		super();
 		mContext = c;
 		inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		curLanguage = SystemMethod.getCurLanguage(mContext);
 		if (list.isEmpty()) {
-			mDataList = new ArrayList<clsScheduleInfo>();
+			mDataList = new ArrayList<ScheduleInfo>();
 		} else {
 			mDataList = list;
 		}
@@ -45,7 +45,7 @@ public class ScheduleInfoAdapter extends BasicAdapter {
 	}
 
 	@Override
-	public clsScheduleInfo getItem(int position) {
+	public ScheduleInfo getItem(int position) {
 		return mDataList.get(position);
 	}
 
@@ -68,11 +68,11 @@ public class ScheduleInfoAdapter extends BasicAdapter {
 			temp = (Holder) convertView.getTag();
 		}
 
-		clsScheduleInfo oclClsScheduleInfo = mDataList.get(position);
+		ScheduleInfo oclScheduleInfo = mDataList.get(position);
 
-		temp.txtLable.setText(String.format(mContext.getString(R.string.ScheduleInfo_lable), position + 1));
-		temp.txtTitle.setText(oclClsScheduleInfo.getTitle());
-		temp.txtStartTime.setText(String.format(mContext.getString(R.string.ScheduleInfo_startTime), oclClsScheduleInfo.getStartTime(curLanguage)));
+//		temp.txtLable.setText(String.format(mContext.getString(R.string.ScheduleInfo_lable), position + 1));
+//		temp.txtTitle.setText(oclScheduleInfo.getTitle());
+//		temp.txtStartTime.setText(String.format(mContext.getString(R.string.ScheduleInfo_startTime), oclScheduleInfo.getStartTime(curLanguage)));
 
 		return convertView;
 	}

@@ -93,6 +93,7 @@
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
             android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
+        <activity android:name=".activity.ScheduleActivity"/>
         <activity
             android:name="com.adsale.HEATEC.activity.ExhibitorActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
@@ -120,16 +121,6 @@
         </activity>
         <activity
             android:name="com.adsale.HEATEC.activity.ExhibitorDetailActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustPan" >
-        </activity>
-        <activity
-            android:name="com.adsale.HEATEC.activity.ScheduleEditActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
-            android:windowSoftInputMode="stateHidden|adjustPan" >
-        </activity>
-        <activity
-            android:name="com.adsale.HEATEC.activity.ScheduleActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
             android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
@@ -221,5 +212,6 @@
         <!-- ========================================================== -->
         <!-- 百度统计相关配置 e -->
     </application>
+
 
 </manifest>

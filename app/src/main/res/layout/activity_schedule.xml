@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.adsale.HEATEC.util.Constant" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.adsale.HEATEC.viewmodel.ScheduleViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@{Constant.SCHEDULE_MONTH}"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/btnDate01"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/textView1"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/textView1"
+            android:gravity="center"
+            android:text="@{Constant.SCHEDULE_DAY0}"
+            android:textSize="16sp"
+            app:circle="@{model.dateIndex==0}"
+            android:onClick="@{()->model.onDateClick(0)}"
+            />
+
+        <TextView
+            android:id="@+id/btnDate02"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/btnDate01"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/btnDate01"
+            android:gravity="center"
+            android:text="@{Constant.SCHEDULE_DAY1}"
+            android:textSize="16sp"
+            app:circle="@{model.dateIndex==1}"
+            android:onClick="@{()->model.onDateClick(1)}"
+            />
+
+        <!--android:background="@{model.dateIndex.get()==1?@drawable/oval_black:@drawable/oval_white}"-->
+        <!--android:textColor="@{model.dateIndex.get()==1?@color/white:@color/black}"-->
+
+
+        <TextView
+            android:id="@+id/btnDate03"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/btnDate01"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/btnDate02"
+            android:gravity="center"
+            android:text="@{Constant.SCHEDULE_DAY2}"
+            android:textSize="16sp"
+            app:circle="@{model.dateIndex==2}"
+            android:onClick="@{()->model.onDateClick(2)}"
+            />
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/schedulePager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/textView1"
+            android:fadingEdge="none"
+            android:overScrollMode="never" />
+
+    </RelativeLayout>
+
+</layout>

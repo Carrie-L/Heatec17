@@ -4,6 +4,9 @@ package com.adsale.HEATEC.dao;
 
 // KEEP INCLUDES - put your custom includes here
 // KEEP INCLUDES END
+
+import com.adsale.HEATEC.util.SystemMethod;
+
 /**
  * Entity mapped to table "WEB_CONTENT".
  */
@@ -174,6 +177,10 @@ public class WebContent {
     }
 
     // KEEP METHODS - put your custom methods here
+
+    public String getTitle(int language){
+        return SystemMethod.getName(language,TitleTW,TitleEN,TitleCN);
+    }
     // KEEP METHODS END
 
 }

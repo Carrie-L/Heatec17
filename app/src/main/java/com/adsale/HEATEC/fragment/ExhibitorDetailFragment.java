@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,7 +17,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.adsale.HEATEC.R;
-import com.adsale.HEATEC.activity.ScheduleEditActivity;
 import com.adsale.HEATEC.base.BaseFragment;
 import com.adsale.HEATEC.database.ExhibitorDBHelper;
 import com.adsale.HEATEC.database.model.clsExhibitor;
@@ -28,6 +26,8 @@ import com.adsale.HEATEC.util.SystemMethod;
 import com.adsale.HEATEC.view.ExhibitorDtlView;
 import com.adsale.HEATEC.view.NoteView;
 import com.adsale.HEATEC.view.ScheduleInfoView;
+
+import static com.adsale.HEATEC.R.id.ScheduleFragment;
 
 public class ExhibitorDetailFragment extends BaseFragment {
 	public static final String TAG = "ExhibitorDetailFragment";
@@ -44,10 +44,10 @@ public class ExhibitorDetailFragment extends BaseFragment {
 	private clsExhibitor mclsExhibitor;
 	private int mCurLanguage;
 	private ExhibitorDtlView mExhibitorDtlView;
-	private ScheduleInfoView mScheduleInfoView;
 	private NoteView mNoteView;
 
 	private String mTitle;
+	private ScheduleInfoView mScheduleInfoView;
 
 	@Override
 	public View initView(LayoutInflater inflater) {
@@ -212,39 +212,39 @@ public class ExhibitorDetailFragment extends BaseFragment {
 
 			if (oClsScheduleInfo != null) {
 				if (!SystemMethod.isPadDevice(mContext)) {
-					Intent intent = new Intent(mContext, ScheduleEditActivity.class);
-					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-					intent.putExtra("ExhibitorName", mclsExhibitor.getCompanyName(mCurLanguage));
-					intent.putExtra("ScheduleInfo", oClsScheduleInfo);
-					startActivityForResult(intent, ScheduleFragment.REQUEST_CODE_Edit);
-					if (SystemMethod.getSharedPreferences(mContext, "DeviceType").equals("Pad")) {
-						((Activity) mContext).overridePendingTransition(R.animator.fade_in, R.animator.fade_out);
-					}
+//					Intent intent = new Intent(mContext, ScheduleEditActivity.class);
+//					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//					intent.putExtra("ExhibitorName", mclsExhibitor.getCompanyName(mCurLanguage));
+//					intent.putExtra("ScheduleInfo", oClsScheduleInfo);
+//					startActivityForResult(intent, ScheduleFragment.REQUEST_CODE_Edit);
+//					if (SystemMethod.getSharedPreferences(mContext, "DeviceType").equals("Pad")) {
+//						((Activity) mContext).overridePendingTransition(R.animator.fade_in, R.animator.fade_out);
+//					}
 				}
 			}
 		}
 	};
 
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == ScheduleFragment.REQUEST_CODE_Edit) {
-			ResetScheduleData();
-		}
+//		if (requestCode == ScheduleFragment.REQUEST_CODE_Edit) {
+//			ResetScheduleData();
+//		}
 	};
 
 	OnClickListener btnAddClickListener = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(mContext, ScheduleEditActivity.class);
-			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			intent.putExtra("CompanyID", mclsExhibitor.getCompanyID());
-			intent.putExtra("ExhibitorName", mclsExhibitor.getCompanyName(mCurLanguage));
-			
-			LogUtil.i(TAG, "name="+ mclsExhibitor.getCompanyName(mCurLanguage)+",CompanyID="+mclsExhibitor.getCompanyID());
-			intent.putExtra("Title", getString(R.string.title_agenda));
-			startActivityForResult(intent, ScheduleFragment.REQUEST_CODE_Edit);
-			if (SystemMethod.getSharedPreferences(mContext, "DeviceType").equals("Pad")) {
-				((Activity) mContext).overridePendingTransition(R.animator.fade_in, R.animator.fade_out);
-			}
+//			Intent intent = new Intent(mContext, ScheduleEditActivity.class);
+//			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//			intent.putExtra("CompanyID", mclsExhibitor.getCompanyID());
+//			intent.putExtra("ExhibitorName", mclsExhibitor.getCompanyName(mCurLanguage));
+//
+//			LogUtil.i(TAG, "name="+ mclsExhibitor.getCompanyName(mCurLanguage)+",CompanyID="+mclsExhibitor.getCompanyID());
+//			intent.putExtra("Title", getString(R.string.title_agenda));
+//			startActivityForResult(intent, ScheduleFragment.REQUEST_CODE_Edit);
+//			if (SystemMethod.getSharedPreferences(mContext, "DeviceType").equals("Pad")) {
+//				((Activity) mContext).overridePendingTransition(R.animator.fade_in, R.animator.fade_out);
+//			}
 
 		}
 	};

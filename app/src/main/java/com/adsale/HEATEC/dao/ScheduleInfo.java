@@ -4,19 +4,24 @@ package com.adsale.HEATEC.dao;
 
 // KEEP INCLUDES - put your custom includes here
 // KEEP INCLUDES END
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Entity mapped to table "SCHEDULE_INFO".
  */
-public class ScheduleInfo {
+public class ScheduleInfo implements Parcelable {
 
     private Long ScheduleID;
-    private String Title;
-    private String Note;
-    private String Location;
     private String CompanyID;
+    private String Title;
+    private String Location;
+    private Integer Day_Index;
     private String StartTime;
     private Integer Length;
-    private Integer Allday;
+    private Integer AllDay;
+    private String Note;
 
     // KEEP FIELDS - put your custom fields here
     // KEEP FIELDS END
@@ -28,15 +33,16 @@ public class ScheduleInfo {
         this.ScheduleID = ScheduleID;
     }
 
-    public ScheduleInfo(Long ScheduleID, String Title, String Note, String Location, String CompanyID, String StartTime, Integer Length, Integer Allday) {
+    public ScheduleInfo(Long ScheduleID, String CompanyID, String Title, String Location, Integer Day_Index, String StartTime, Integer Length, Integer AllDay, String Note) {
         this.ScheduleID = ScheduleID;
-        this.Title = Title;
-        this.Note = Note;
-        this.Location = Location;
         this.CompanyID = CompanyID;
+        this.Title = Title;
+        this.Location = Location;
+        this.Day_Index = Day_Index;
         this.StartTime = StartTime;
         this.Length = Length;
-        this.Allday = Allday;
+        this.AllDay = AllDay;
+        this.Note = Note;
     }
 
     public Long getScheduleID() {
@@ -47,20 +53,20 @@ public class ScheduleInfo {
         this.ScheduleID = ScheduleID;
     }
 
+    public String getCompanyID() {
+        return CompanyID;
+    }
+
+    public void setCompanyID(String CompanyID) {
+        this.CompanyID = CompanyID;
+    }
+
     public String getTitle() {
         return Title;
     }
 
     public void setTitle(String Title) {
         this.Title = Title;
-    }
-
-    public String getNote() {
-        return Note;
-    }
-
-    public void setNote(String Note) {
-        this.Note = Note;
     }
 
     public String getLocation() {
@@ -71,12 +77,12 @@ public class ScheduleInfo {
         this.Location = Location;
     }
 
-    public String getCompanyID() {
-        return CompanyID;
+    public Integer getDay_Index() {
+        return Day_Index;
     }
 
-    public void setCompanyID(String CompanyID) {
-        this.CompanyID = CompanyID;
+    public void setDay_Index(Integer Day_Index) {
+        this.Day_Index = Day_Index;
     }
 
     public String getStartTime() {
@@ -95,15 +101,62 @@ public class ScheduleInfo {
         this.Length = Length;
     }
 
-    public Integer getAllday() {
-        return Allday;
+    public Integer getAllDay() {
+        return AllDay;
     }
 
-    public void setAllday(Integer Allday) {
-        this.Allday = Allday;
+    public void setAllDay(Integer AllDay) {
+        this.AllDay = AllDay;
+    }
+
+    public String getNote() {
+        return Note;
+    }
+
+    public void setNote(String Note) {
+        this.Note = Note;
     }
 
     // KEEP METHODS - put your custom methods here
     // KEEP METHODS END
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.ScheduleID);
+        dest.writeString(this.CompanyID);
+        dest.writeString(this.Title);
+        dest.writeString(this.Location);
+        dest.writeValue(this.Day_Index);
+        dest.writeString(this.StartTime);
+        dest.writeValue(this.Length);
+        dest.writeValue(this.AllDay);
+        dest.writeString(this.Note);
+    }
+
+    protected ScheduleInfo(Parcel in) {
+        this.ScheduleID = (Long) in.readValue(Long.class.getClassLoader());
+        this.CompanyID = in.readString();
+        this.Title = in.readString();
+        this.Location = in.readString();
+        this.Day_Index = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.StartTime = in.readString();
+        this.Length = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.AllDay = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.Note = in.readString();
+    }
+
+    public static final Parcelable.Creator<ScheduleInfo> CREATOR = new Parcelable.Creator<ScheduleInfo>() {
+        public ScheduleInfo createFromParcel(Parcel source) {
+            return new ScheduleInfo(source);
+        }
+
+        public ScheduleInfo[] newArray(int size) {
+            return new ScheduleInfo[size];
+        }
+    };
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.adapter.ScheduleInfoAdapter;
-import com.adsale.HEATEC.database.model.clsScheduleInfo;
+import com.adsale.HEATEC.dao.ScheduleInfo;
 
 import sanvio.libs.util.DisplayUtils;
 import android.content.Context;
@@ -60,13 +60,11 @@ public class SchedulePagerItem extends LinearLayout {
 		listView.setDividerHeight(DisplayUtils.dip2px(mContext, 1));
 	}
 
-	public void setData(List<clsScheduleInfo> oColScheduleInfos, OnClickListener btnAddClickListener, OnItemClickListener mItemClickListener) {
+	public void setData(List<ScheduleInfo> oColScheduleInfos, OnItemClickListener mItemClickListener) {
 		listView.setEmptyView(txtNoData);
 		mAdapter = new ScheduleInfoAdapter(mContext, oColScheduleInfos);
 		listView.setAdapter(mAdapter);
 		listView.setOnItemClickListener(mItemClickListener);
-		btnAdd.setOnClickListener(btnAddClickListener);
-
 	}
 
 	public void DestroyView() {
