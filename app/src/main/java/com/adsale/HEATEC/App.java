@@ -114,7 +114,7 @@ public class App extends Application {
 		// Initialize ImageLoader with configuration.
 		ImageLoader.getInstance().init(configuration);
 
-		DB_PATH = "/data" + Environment.getDataDirectory().getAbsolutePath() + "/" + getPackageName() + "/databases";
+//		DB_PATH = "/data" + Environment.getDataDirectory().getAbsolutePath() + "/" + getPackageName() + "/databases";
 		RootDir = getDir("Heatec",MODE_PRIVATE).getAbsolutePath().concat("/");
 		filesDir = getFilesDir().getAbsolutePath()+"/";
 		mAssetManager=getAssets();

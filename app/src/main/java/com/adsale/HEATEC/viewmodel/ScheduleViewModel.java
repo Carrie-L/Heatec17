@@ -59,16 +59,6 @@ public class ScheduleViewModel extends BaseObservable {
         mDataRepository = DataRepository.getInstance(context);
     }
 
-//    private static ScheduleViewModel INSTANCE;
-//    public static ScheduleViewModel getInstance(){
-//        if(INSTANCE==null){
-//            LogUtil.e(TAG,"INSTANCE==null");
-//            return new ScheduleViewModel();
-//        }
-//        LogUtil.e(TAG,"getInstance()");
-//        return INSTANCE;
-//    }
-
     public void initScheduleList(RecyclerView recyclerView){
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
@@ -140,6 +130,8 @@ public class ScheduleViewModel extends BaseObservable {
         LogUtil.i(TAG,"onAdd: dateIndex="+dateIndex.get());
         Intent intent=new Intent(mContext, ExhibitorListActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("index",dateIndex.get());
         mContext.startActivity(intent);
     }
 

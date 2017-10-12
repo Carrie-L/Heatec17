@@ -4,10 +4,16 @@ package com.adsale.HEATEC.dao;
 
 // KEEP INCLUDES - put your custom includes here
 // KEEP INCLUDES END
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.adsale.HEATEC.util.SystemMethod;
+
 /**
  * Entity mapped to table "EXHIBITOR".
  */
-public class Exhibitor {
+public class Exhibitor implements Parcelable {
 
     private String CompanyID;
     private Boolean IsDelete;
@@ -434,6 +440,126 @@ public class Exhibitor {
     }
 
     // KEEP METHODS - put your custom methods here
+    public String getCompanyName(int language) {
+        return SystemMethod.getName(language,CompanyNameTW, CompanyNameEN, CompanyNameCN);
+    }
+
+    public String getSort(int language) {
+        return SystemMethod.getName(language,SortTW, SortEN, SortCN);
+    }
+
+    private String getDesc(int language) {
+        if (language == 0) {
+            return DescriptionTW;
+        } else if (language == 1) {
+            return DescriptionEN;
+        } else {
+            return DescriptionCN;
+        }
+    }
     // KEEP METHODS END
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.CompanyID);
+        dest.writeValue(this.IsDelete);
+        dest.writeString(this.CompanyNameTW);
+        dest.writeString(this.DescriptionTW);
+        dest.writeString(this.AddressTW);
+        dest.writeString(this.SortTW);
+        dest.writeString(this.CompanyNameCN);
+        dest.writeString(this.DescriptionCN);
+        dest.writeString(this.AddressCN);
+        dest.writeString(this.SortCN);
+        dest.writeString(this.CompanyNameEN);
+        dest.writeString(this.DescriptionEN);
+        dest.writeString(this.AddressEN);
+        dest.writeString(this.SortEN);
+        dest.writeString(this.ExhibitorNO);
+        dest.writeString(this.CountryID);
+        dest.writeString(this.Logo);
+        dest.writeString(this.Tel);
+        dest.writeString(this.Tel1);
+        dest.writeString(this.Fax);
+        dest.writeString(this.Email);
+        dest.writeString(this.Website);
+        dest.writeString(this.Longitude);
+        dest.writeString(this.Latitude);
+        dest.writeString(this.Location_X);
+        dest.writeString(this.Location_Y);
+        dest.writeString(this.Location_W);
+        dest.writeString(this.Location_H);
+        dest.writeString(this.SEQ);
+        dest.writeString(this.CreateDateTime);
+        dest.writeString(this.UpdateDateTime);
+        dest.writeString(this.RecordTimeStamp);
+        dest.writeString(this.ContactTW);
+        dest.writeString(this.TitleTW);
+        dest.writeString(this.ContactCN);
+        dest.writeString(this.TitleCN);
+        dest.writeString(this.ContactEN);
+        dest.writeString(this.TitleEN);
+        dest.writeString(this.IsFavourite);
+        dest.writeString(this.Note);
+        dest.writeString(this.Floor);
+    }
+
+    protected Exhibitor(Parcel in) {
+        this.CompanyID = in.readString();
+        this.IsDelete = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.CompanyNameTW = in.readString();
+        this.DescriptionTW = in.readString();
+        this.AddressTW = in.readString();
+        this.SortTW = in.readString();
+        this.CompanyNameCN = in.readString();
+        this.DescriptionCN = in.readString();
+        this.AddressCN = in.readString();
+        this.SortCN = in.readString();
+        this.CompanyNameEN = in.readString();
+        this.DescriptionEN = in.readString();
+        this.AddressEN = in.readString();
+        this.SortEN = in.readString();
+        this.ExhibitorNO = in.readString();
+        this.CountryID = in.readString();
+        this.Logo = in.readString();
+        this.Tel = in.readString();
+        this.Tel1 = in.readString();
+        this.Fax = in.readString();
+        this.Email = in.readString();
+        this.Website = in.readString();
+        this.Longitude = in.readString();
+        this.Latitude = in.readString();
+        this.Location_X = in.readString();
+        this.Location_Y = in.readString();
+        this.Location_W = in.readString();
+        this.Location_H = in.readString();
+        this.SEQ = in.readString();
+        this.CreateDateTime = in.readString();
+        this.UpdateDateTime = in.readString();
+        this.RecordTimeStamp = in.readString();
+        this.ContactTW = in.readString();
+        this.TitleTW = in.readString();
+        this.ContactCN = in.readString();
+        this.TitleCN = in.readString();
+        this.ContactEN = in.readString();
+        this.TitleEN = in.readString();
+        this.IsFavourite = in.readString();
+        this.Note = in.readString();
+        this.Floor = in.readString();
+    }
+
+    public static final Parcelable.Creator<Exhibitor> CREATOR = new Parcelable.Creator<Exhibitor>() {
+        public Exhibitor createFromParcel(Parcel source) {
+            return new Exhibitor(source);
+        }
+
+        public Exhibitor[] newArray(int size) {
+            return new Exhibitor[size];
+        }
+    };
 }

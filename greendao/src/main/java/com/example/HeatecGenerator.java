@@ -212,8 +212,8 @@ public class HeatecGenerator {
         entity.addStringProperty("Location");
         entity.addIntProperty("Day_Index");//start from 0
         entity.addStringProperty("StartTime");
-        entity.addIntProperty("Length");
-        entity.addIntProperty("AllDay");
+        entity.addIntProperty("Hour");
+        entity.addIntProperty("Minute");
         entity.addStringProperty("Note");
     }
 

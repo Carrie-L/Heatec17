@@ -10,17 +10,5 @@
     {
         "merged": "E:\\studio_workspace\\Heatec17\\pulltorefresh_library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\indicator_arrow.png",
         "source": "E:\\studio_workspace\\Heatec17\\pulltorefresh_library\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\indicator_arrow.png"
-    },
-    {
-        "merged": "E:\\AndroidStudioProjects\\Heatec17\\pulltorefresh_library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_ptr_rotate.png",
-        "source": "E:\\AndroidStudioProjects\\Heatec17\\pulltorefresh_library\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_ptr_rotate.png"
-    },
-    {
-        "merged": "E:\\AndroidStudioProjects\\Heatec17\\pulltorefresh_library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\indicator_arrow.png",
-        "source": "E:\\AndroidStudioProjects\\Heatec17\\pulltorefresh_library\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\indicator_arrow.png"
-    },
-    {
-        "merged": "E:\\AndroidStudioProjects\\Heatec17\\pulltorefresh_library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\default_ptr_flip.png",
-        "source": "E:\\AndroidStudioProjects\\Heatec17\\pulltorefresh_library\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\default_ptr_flip.png"
     }
 ]

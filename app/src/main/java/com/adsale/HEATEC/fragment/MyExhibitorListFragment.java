@@ -118,35 +118,35 @@ public class MyExhibitorListFragment extends BaseFragment {
 				mcolExhibitors.addAll(mcolExhibitors.size(), oTempList);
 			}
 		}
-		if (mExhibitorAdapter == null) {
-			mExhibitorAdapter = new ExhibitorAdapter(mContext, mLanguage, mcolExhibitors);
-			mExhibitorAdapter.setSectionList(IndexArray);
-			lstExhibitor.setAdapter(mExhibitorAdapter);
-		} else {
-			mExhibitorAdapter.setListData(mcolExhibitors, mLanguage);
-			mExhibitorAdapter.setSectionList(IndexArray);
-			mExhibitorAdapter.notifyDataSetChanged();
-		}
-		indexBar.setListView(lstExhibitor, mExhibitorAdapter, IndexArray);
+//		if (mExhibitorAdapter == null) {
+//			mExhibitorAdapter = new ExhibitorAdapter(mContext, mLanguage, mcolExhibitors);
+//			mExhibitorAdapter.setSectionList(IndexArray);
+//			lstExhibitor.setAdapter(mExhibitorAdapter);
+//		} else {
+//			mExhibitorAdapter.setListData(mcolExhibitors, mLanguage);
+//			mExhibitorAdapter.setSectionList(IndexArray);
+//			mExhibitorAdapter.notifyDataSetChanged();
+//		}
+//		indexBar.setListView(lstExhibitor, mExhibitorAdapter, IndexArray);
 
 	}
 
 	private OnItemClickListener mItemClickListener = new OnItemClickListener() {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-			clsExhibitor oItem = mExhibitorAdapter.getItem(position);
-
-			StatService.onEvent(mContext, EVENTID, "pass", 1);
-
-			if (oItem != null) {
-				Intent intent = new Intent(mContext, ExhibitorDetailActivity.class);
-				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				intent.putExtra("Exhibitor", oItem);
-				startActivityForResult(intent, 1001);
-				if (SystemMethod.getSharedPreferences(mContext, "DeviceType").equals("Pad")) {
-					((Activity) mContext).overridePendingTransition(R.animator.fade_in, R.animator.fade_out);
-				}
-			}
+//			clsExhibitor oItem = mExhibitorAdapter.getItem(position);
+//
+//			StatService.onEvent(mContext, EVENTID, "pass", 1);
+//
+//			if (oItem != null) {
+//				Intent intent = new Intent(mContext, ExhibitorDetailActivity.class);
+//				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//				intent.putExtra("Exhibitor", oItem);
+//				startActivityForResult(intent, 1001);
+//				if (SystemMethod.getSharedPreferences(mContext, "DeviceType").equals("Pad")) {
+//					((Activity) mContext).overridePendingTransition(R.animator.fade_in, R.animator.fade_out);
+//				}
+//			}
 		}
 	};
 

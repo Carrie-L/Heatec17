@@ -13,9 +13,11 @@
 
     <!--RGB(,,)  -->
     <color name="btn_Color">#049FAA</color>
-    
+
+    <color name="list_bar">#5599c7</color>
+
     <color name="grey">#BEBEBE</color>
-    <color name="grey_font">#ff9e9e9e</color>
+    <color name="grey_font">#212121</color>
     
     
     

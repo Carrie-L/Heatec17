@@ -138,6 +138,21 @@
         <item name="android:padding">5dp</item>
     </style>
 
+   <style name="schedule_edit_image_style">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:layout_marginTop">12dp</item>
+        <item name="android:contentDescription">@string/imgDescription</item>
+    </style>
+
+
+   <style name="schedule_edit_text_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:background">@drawable/edittext_bg</item>
+    </style>
 
     
 </resources>

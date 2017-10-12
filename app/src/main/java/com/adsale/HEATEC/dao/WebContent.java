@@ -5,12 +5,15 @@ package com.adsale.HEATEC.dao;
 // KEEP INCLUDES - put your custom includes here
 // KEEP INCLUDES END
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.adsale.HEATEC.util.SystemMethod;
 
 /**
  * Entity mapped to table "WEB_CONTENT".
  */
-public class WebContent {
+public class WebContent implements Parcelable {
 
     private String PageId;
     private Boolean IsDelete;
@@ -183,4 +186,55 @@ public class WebContent {
     }
     // KEEP METHODS END
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.PageId);
+        dest.writeValue(this.IsDelete);
+        dest.writeString(this.TitleTW);
+        dest.writeString(this.TitleCN);
+        dest.writeString(this.TitleEN);
+        dest.writeValue(this.CType);
+        dest.writeString(this.CFile);
+        dest.writeString(this.ZipDateTime);
+        dest.writeString(this.ContentEN);
+        dest.writeString(this.ContentSC);
+        dest.writeString(this.ContentTC);
+        dest.writeString(this.CreateDateTime);
+        dest.writeString(this.UpdateDateTime);
+        dest.writeString(this.RecordTimeStamp);
+        dest.writeValue(this.IsDown);
+    }
+
+    protected WebContent(Parcel in) {
+        this.PageId = in.readString();
+        this.IsDelete = (Boolean) in.readValue(Boolean.class.getClassLoader());
+        this.TitleTW = in.readString();
+        this.TitleCN = in.readString();
+        this.TitleEN = in.readString();
+        this.CType = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.CFile = in.readString();
+        this.ZipDateTime = in.readString();
+        this.ContentEN = in.readString();
+        this.ContentSC = in.readString();
+        this.ContentTC = in.readString();
+        this.CreateDateTime = in.readString();
+        this.UpdateDateTime = in.readString();
+        this.RecordTimeStamp = in.readString();
+        this.IsDown = (Integer) in.readValue(Integer.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<WebContent> CREATOR = new Parcelable.Creator<WebContent>() {
+        public WebContent createFromParcel(Parcel source) {
+            return new WebContent(source);
+        }
+
+        public WebContent[] newArray(int size) {
+            return new WebContent[size];
+        }
+    };
 }

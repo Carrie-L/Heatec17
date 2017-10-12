@@ -29,8 +29,8 @@ public class ScheduleInfoDao extends AbstractDao<ScheduleInfo, Long> {
         public final static Property Location = new Property(3, String.class, "Location", false, "LOCATION");
         public final static Property Day_Index = new Property(4, Integer.class, "Day_Index", false, "DAY__INDEX");
         public final static Property StartTime = new Property(5, String.class, "StartTime", false, "START_TIME");
-        public final static Property Length = new Property(6, Integer.class, "Length", false, "LENGTH");
-        public final static Property AllDay = new Property(7, Integer.class, "AllDay", false, "ALL_DAY");
+        public final static Property Hour = new Property(6, Integer.class, "Hour", false, "HOUR");
+        public final static Property Minute = new Property(7, Integer.class, "Minute", false, "MINUTE");
         public final static Property Note = new Property(8, String.class, "Note", false, "NOTE");
     };
 
@@ -53,8 +53,8 @@ public class ScheduleInfoDao extends AbstractDao<ScheduleInfo, Long> {
                 "\"LOCATION\" TEXT," + // 3: Location
                 "\"DAY__INDEX\" INTEGER," + // 4: Day_Index
                 "\"START_TIME\" TEXT," + // 5: StartTime
-                "\"LENGTH\" INTEGER," + // 6: Length
-                "\"ALL_DAY\" INTEGER," + // 7: AllDay
+                "\"HOUR\" INTEGER," + // 6: Hour
+                "\"MINUTE\" INTEGER," + // 7: Minute
                 "\"NOTE\" TEXT);"); // 8: Note
     }
 
@@ -99,14 +99,14 @@ public class ScheduleInfoDao extends AbstractDao<ScheduleInfo, Long> {
             stmt.bindString(6, StartTime);
         }
  
-        Integer Length = entity.getLength();
-        if (Length != null) {
-            stmt.bindLong(7, Length);
+        Integer Hour = entity.getHour();
+        if (Hour != null) {
+            stmt.bindLong(7, Hour);
         }
  
-        Integer AllDay = entity.getAllDay();
-        if (AllDay != null) {
-            stmt.bindLong(8, AllDay);
+        Integer Minute = entity.getMinute();
+        if (Minute != null) {
+            stmt.bindLong(8, Minute);
         }
  
         String Note = entity.getNote();
@@ -131,8 +131,8 @@ public class ScheduleInfoDao extends AbstractDao<ScheduleInfo, Long> {
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // Location
             cursor.isNull(offset + 4) ? null : cursor.getInt(offset + 4), // Day_Index
             cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // StartTime
-            cursor.isNull(offset + 6) ? null : cursor.getInt(offset + 6), // Length
-            cursor.isNull(offset + 7) ? null : cursor.getInt(offset + 7), // AllDay
+            cursor.isNull(offset + 6) ? null : cursor.getInt(offset + 6), // Hour
+            cursor.isNull(offset + 7) ? null : cursor.getInt(offset + 7), // Minute
             cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8) // Note
         );
         return entity;
@@ -147,8 +147,8 @@ public class ScheduleInfoDao extends AbstractDao<ScheduleInfo, Long> {
         entity.setLocation(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
         entity.setDay_Index(cursor.isNull(offset + 4) ? null : cursor.getInt(offset + 4));
         entity.setStartTime(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
-        entity.setLength(cursor.isNull(offset + 6) ? null : cursor.getInt(offset + 6));
-        entity.setAllDay(cursor.isNull(offset + 7) ? null : cursor.getInt(offset + 7));
+        entity.setHour(cursor.isNull(offset + 6) ? null : cursor.getInt(offset + 6));
+        entity.setMinute(cursor.isNull(offset + 7) ? null : cursor.getInt(offset + 7));
         entity.setNote(cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8));
      }
     

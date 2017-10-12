@@ -180,7 +180,7 @@ public class ScheduleInfoDBHelper extends DatabaseHelper {
 		cv.put("Location", pScheduleInfo.getLocation());
 		cv.put("CompanyID", pScheduleInfo.getCompanyID());
 		cv.put("StartTime", pScheduleInfo.getStartTime());
-		cv.put("Length", pScheduleInfo.getLength());
+		cv.put("Length", pScheduleInfo.getMinute());
 //		cv.put("Allday", pScheduleInfo.getAllday());
 	}
 

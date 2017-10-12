@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.adsale.HEATEC.viewmodel.ScheduleEditViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/lySchedule"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_title"
+            style="@style/schedule_edit_image_style"
+            android:layout_height="30dp"
+            android:src="@drawable/title" />
+
+        <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/iv_title"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/iv_title"
+            android:gravity="center_vertical"
+            android:text="@string/title"
+            android:textColor="@color/grey_font" />
+
+        <EditText
+            android:id="@+id/editTitle"
+            style="@style/schedule_edit_text_style"
+            android:layout_alignLeft="@+id/editLocation"
+            android:layout_alignStart="@+id/editLocation"
+            android:layout_alignTop="@+id/lblTitle"
+            android:background="@drawable/edittext_bg"
+            android:singleLine="true"
+            android:text="@={model.etTitle}" />
+
+
+        <ImageView
+            android:id="@+id/iv_location"
+            style="@style/schedule_edit_image_style"
+            android:layout_height="30dp"
+            android:layout_below="@+id/iv_title"
+            android:src="@drawable/region" />
+
+        <TextView
+            android:id="@+id/lblLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/iv_location"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/iv_location"
+            android:gravity="center_vertical"
+            android:text="@string/location"
+            android:textColor="@color/grey_font" />
+
+        <EditText
+            android:id="@+id/editLocation"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignTop="@id/lblLocation"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_toRightOf="@id/lblLocation"
+            android:background="@drawable/edittext_bg"
+            android:singleLine="true"
+            android:text="@={model.etLocation}" />
+
+
+        <ImageView
+            android:id="@+id/iv_start_time"
+            style="@style/schedule_edit_image_style"
+            android:layout_height="30dp"
+            android:layout_below="@id/iv_location"
+            android:src="@drawable/date" />
+
+        <TextView
+            android:id="@+id/lblStartTime"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/iv_start_time"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/iv_start_time"
+            android:gravity="center_vertical"
+            android:text="@string/startTime"
+            android:textColor="@color/grey_font" />
+
+        <EditText
+            android:id="@+id/editStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@id/editLocation"
+            android:layout_alignTop="@+id/lblStartTime"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@+id/lblStartTime"
+            android:background="@null"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:text="@={model.etStartDate}" />
+
+        <EditText
+            android:id="@+id/editStartTime2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/lblStartTime"
+            android:layout_toRightOf="@+id/editStartDate"
+            android:background="@null"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:text="@={model.etStartTime}" />
+
+
+        <ImageView
+            android:id="@+id/iv_length"
+            style="@style/schedule_edit_image_style"
+            android:layout_height="30dp"
+            android:layout_below="@id/iv_start_time"
+            android:src="@drawable/duration" />
+
+        <TextView
+            android:id="@+id/lblLength"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/iv_length"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/iv_length"
+            android:gravity="center_vertical"
+            android:text="@string/length"
+            android:textColor="@color/grey_font" />
+
+
+        <EditText
+            android:id="@+id/editHour"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_alignLeft="@id/editLocation"
+            android:layout_alignTop="@+id/lblLength"
+            android:background="@drawable/edittext_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:text="@={model.etHour}" />
+
+        <TextView
+            android:id="@+id/lblHour"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/editHour"
+            android:layout_toRightOf="@+id/editHour"
+            android:gravity="center"
+            android:text="@string/hour"
+            android:textColor="@color/grey_font" />
+
+        <EditText
+            android:id="@+id/editMinute"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/editHour"
+            android:layout_toRightOf="@+id/lblHour"
+            android:background="@drawable/edittext_bg"
+            android:gravity="center"
+            android:inputType="number"
+            android:singleLine="true"
+            android:text="@={model.etMinute}" />
+
+        <TextView
+            android:id="@+id/lblMinute"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/editHour"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/editMinute"
+            android:gravity="center"
+            android:text="@string/minute"
+            android:textColor="@color/grey_font" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_length"
+            android:layout_marginTop="32dp"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="80dp"
+                android:layout_height="48dp"
+                android:background="#000"
+                android:onClick="@{()->model.onSave()}"
+                android:text="@string/btnSave"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/btnDel"
+                android:layout_width="80dp"
+                android:layout_height="48dp"
+                android:layout_alignTop="@id/btnSave"
+                android:layout_marginLeft="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_toEndOf="@id/btnSave"
+                android:layout_toRightOf="@id/btnSave"
+                android:background="#ff0000"
+                android:onClick="@{()->model.onDelete()}"
+                android:text="@string/btnDel"
+                android:textColor="#fff"
+                android:visibility="@{model.isEdit?View.VISIBLE:View.GONE}" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</layout>

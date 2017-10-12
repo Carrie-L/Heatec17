@@ -17,8 +17,11 @@ import android.widget.TextView;
 import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.dao.Exhibitor;
 import com.adsale.HEATEC.util.LogUtil;
+import com.adsale.HEATEC.util.SystemMethod;
 
 import java.util.ArrayList;
+
+import static com.adsale.HEATEC.R.id.sdv_logo;
 
 public class ExhibitorAdapter extends RecyclerView.Adapter<ViewHolder>{
     private static final String TAG = "ExhibitorAdapter";
@@ -34,11 +37,13 @@ public class ExhibitorAdapter extends RecyclerView.Adapter<ViewHolder>{
     private Exhibitor exhibitor;
     private HeaderViewHolder headerViewHolder;
     private ExhibitorItemViewHolder itemViewHolder;
+    private int language;
 
     public ExhibitorAdapter(Context context,ArrayList<Exhibitor> lists) {
         this.mContext=context;
         this.exhibitors=lists;
         inflater=LayoutInflater.from(mContext);
+        language= SystemMethod.getCurLanguage(context);
 
         LogUtil.e(TAG, "ExhibitorAdapter");
 
@@ -67,7 +72,7 @@ public class ExhibitorAdapter extends RecyclerView.Adapter<ViewHolder>{
 
         if(holder.getItemViewType()==TYPE_HEADER){
             headerViewHolder = (HeaderViewHolder) holder;
-            headerViewHolder.tvGroupName.setText(exhibitor.getSort());
+            headerViewHolder.tvGroupName.setText(exhibitor.getSort(language));
             showItemText(headerViewHolder);
 
         }else{
@@ -77,12 +82,12 @@ public class ExhibitorAdapter extends RecyclerView.Adapter<ViewHolder>{
     }
 
     private void showItemText(ExhibitorItemViewHolder holder){
-        holder.tvCompanyName.setText(exhibitor.getCompanyName());
-        holder.tvExhibitorNo.setText(exhibitor.getBoothNo());
-        if(!TextUtils.isEmpty(exhibitor.getPhotoFileName().trim())){
-            LogUtil.i(TAG,"getPhotoFileName = "+exhibitor.getPhotoFileName().trim());
+        holder.tvCompanyName.setText(exhibitor.getCompanyName(language));
+        holder.tvExhibitorNo.setText(exhibitor.getExhibitorNO());
+        if(exhibitor.getLogo()!=null&&!exhibitor.getLogo().trim().isEmpty()){
+            LogUtil.i(TAG,"getPhotoFileName = "+exhibitor.getLogo().trim());
             holder.sdvLogo.setVisibility(View.VISIBLE);
-            holder.sdvLogo.setImageURI(Uri.parse(exhibitor.getPhotoFileName()));
+            holder.sdvLogo.setImageURI(Uri.parse(exhibitor.getLogo()));
         }else{
             holder.sdvLogo.setVisibility(View.GONE);
         }
@@ -93,7 +98,7 @@ public class ExhibitorAdapter extends RecyclerView.Adapter<ViewHolder>{
     public int getItemViewType(int position) {
         if(position==0){
             return TYPE_HEADER;
-        }else if(exhibitors.get(position).getSort().equals(exhibitors.get(position-1).getSort())){
+        }else if(exhibitors.get(position).getSort(language).equals(exhibitors.get(position-1).getSort(language))){
             return TYPE_ITEM;
         }else{
             return TYPE_HEADER;
@@ -119,16 +124,16 @@ public class ExhibitorAdapter extends RecyclerView.Adapter<ViewHolder>{
             super(itemView);
             tvCompanyName=(TextView) itemView.findViewById(R.id.txtCategoryName);
             tvExhibitorNo=(TextView) itemView.findViewById(R.id.txtBoothNo);
-            sdvLogo=(ImageView) itemView.findViewById(sdv_logo);
+            sdvLogo=(ImageView) itemView.findViewById(R.id.sdv_logo);
 
-            sdvLogo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    LogUtil.i(TAG,"sdvLogo clicked");
-                    sdvLogo.setImageResource(R.drawable.btn_star);
-
-                }
-            });
+//            sdvLogo.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    LogUtil.i(TAG,"sdvLogo clicked");
+//                    sdvLogo.setImageResource(R.drawable.btn_star);
+//
+//                }
+//            });
         }
     }
 

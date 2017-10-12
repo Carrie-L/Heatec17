@@ -67,7 +67,7 @@ public class ScheduleEditFragment extends BaseFragment {
 
     @Override
     public View initView(LayoutInflater inflater) {
-        mBaseView = inflater.inflate(R.layout.f_schedule_edit, null);
+        mBaseView = inflater.inflate(R.layout.activity_schedule_edit, null);
         mContext = getActivity();
 
         findView();
@@ -110,7 +110,7 @@ public class ScheduleEditFragment extends BaseFragment {
         editLocation = (EditText) mBaseView.findViewById(R.id.editLocation);
         editHour = (EditText) mBaseView.findViewById(R.id.editHour);
         editMinute = (EditText) mBaseView.findViewById(R.id.editMinute);
-        editStartTime = (EditText) mBaseView.findViewById(R.id.editStartTime);
+        editStartTime = (EditText) mBaseView.findViewById(R.id.editStartDate);
         editStartTime2 = (EditText) mBaseView.findViewById(R.id.editStartTime2);
         btnSave = (Button) mBaseView.findViewById(R.id.btnSave);
         btnDel = (Button) mBaseView.findViewById(R.id.btnDel);
@@ -175,7 +175,7 @@ public class ScheduleEditFragment extends BaseFragment {
             editTitle.setText(mScheduleInfo.getTitle());
             editLocation.setText(mScheduleInfo.getLocation());
 
-            int length = mScheduleInfo.getLength();
+            int length = mScheduleInfo.getMinute();
             editHour.setText("" + length / 60);
             editMinute.setText("" + length % 60);
 
@@ -278,7 +278,7 @@ public class ScheduleEditFragment extends BaseFragment {
 
         }
         int length = hour * 60 + minute;
-        mScheduleInfo.setLength(length);
+        mScheduleInfo.setMinute(length);
 //        mScheduleInfo.setAllday(length == 24 * 60 ? 1 : 0);
 
         mScheduleInfo.setStartTime(DateUtils.FormatDate("yyyy-MM-dd HH:mm", mSelectDate.getTime()));

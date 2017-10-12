@@ -69,11 +69,11 @@ public class DataRepository {
     }
 
     public void insertItemData(ScheduleInfo entity) {
-        mScheduleInfoDao.insert(entity);
+        mScheduleInfoDao.insertOrReplace(entity);
     }
 
-    public void deleteItemData(Object obj) {
-        mScheduleInfoDao.deleteByKey((Long) obj);
+    public void deleteItemData(long scheduleId) {
+        mScheduleInfoDao.deleteByKey(scheduleId);
     }
 
     public ScheduleInfo getItemData(long id){

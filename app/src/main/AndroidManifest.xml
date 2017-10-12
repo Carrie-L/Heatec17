@@ -139,6 +139,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize|locale|layoutDirection|screenSize"
             android:windowSoftInputMode="stateHidden|adjustPan" >
         </activity>
+
+        <activity android:name=".activity.ScheduleEditActivity"/>
+
+
+
         <activity
             android:name="cn.sharesdk.framework.ShareSDKUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"

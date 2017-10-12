@@ -53,7 +53,7 @@ public class ExhibitorListFragment extends BaseFragment {
 
 	@Override
 	public View initView(LayoutInflater inflater) {
-		mBaseView = inflater.inflate(R.layout.f_exhibitors, null);
+		mBaseView = inflater.inflate(R.layout.activity_exhibitors, null);
 		mContext = getActivity();
 
 		findView();
@@ -132,29 +132,29 @@ public class ExhibitorListFragment extends BaseFragment {
 //		exhibitor.setCurrentLang(mLanguage);
 //		Collections.sort(mcolExhibitors, new OrderIndex());
 
-		mExhibitorAdapter = new ExhibitorAdapter(mContext, mLanguage, mcolExhibitors);
-		mExhibitorAdapter.setSectionList(IndexArray);
-		indexBar.setListView(lstExhibitor, mExhibitorAdapter, IndexArray);
-
-		lstExhibitor.setAdapter(mExhibitorAdapter);
-		lstExhibitor.setEmptyView(txtNoData);
-		lstExhibitor.setOnItemClickListener(mItemClickListener);
-
-		editFilter.addTextChangedListener(new TextWatcher() {
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-			}
-
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-			}
-
-			@Override
-			public void afterTextChanged(Editable s) {
-				mExhibitorAdapter.getFilter().filter(s.toString(), new myFilterListener());
-
-			}
-		});
+//		mExhibitorAdapter = new ExhibitorAdapter(mContext, mLanguage, mcolExhibitors);
+//		mExhibitorAdapter.setSectionList(IndexArray);
+//		indexBar.setListView(lstExhibitor, mExhibitorAdapter, IndexArray);
+//
+//		lstExhibitor.setAdapter(mExhibitorAdapter);
+//		lstExhibitor.setEmptyView(txtNoData);
+//		lstExhibitor.setOnItemClickListener(mItemClickListener);
+//
+//		editFilter.addTextChangedListener(new TextWatcher() {
+//			@Override
+//			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//			}
+//
+//			@Override
+//			public void onTextChanged(CharSequence s, int start, int before, int count) {
+//			}
+//
+//			@Override
+//			public void afterTextChanged(Editable s) {
+//				mExhibitorAdapter.getFilter().filter(s.toString(), new myFilterListener());
+//
+//			}
+//		});
 	}
 
 	// 升序
@@ -213,12 +213,12 @@ public class ExhibitorListFragment extends BaseFragment {
 		@Override
 		public void onFilterComplete(int count) {
 
-			if (editFilter.getText().toString().trim().isEmpty()) {
-				indexBar.setListView(lstExhibitor, mExhibitorAdapter, IndexArray);
-			} else {
-				List<clsSection> ocolSections = getSectionList(mExhibitorAdapter.getData());
-				indexBar.setIndexArray(ocolSections);
-			}
+//			if (editFilter.getText().toString().trim().isEmpty()) {
+//				indexBar.setListView(lstExhibitor, mExhibitorAdapter, IndexArray);
+//			} else {
+//				List<clsSection> ocolSections = getSectionList(mExhibitorAdapter.getData());
+//				indexBar.setIndexArray(ocolSections);
+//			}
 		}
 
 	}
@@ -243,42 +243,42 @@ public class ExhibitorListFragment extends BaseFragment {
 
 	}
 
-	private OnItemClickListener mItemClickListener = new OnItemClickListener() {
-		@Override
-		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-			clsExhibitor oItem = mExhibitorAdapter.getItem(position);
-
-			// SystemMethod.trackLogJson(mContext, 100, "page",
-			// oItem.getCompanyNameEN(), null);
-
-			if (oItem != null) {
-				if (mAddSchedule) {
-
-					LogUtil.i(TAG, "mAddSchedule: setResult(Activity.RESULT_OK");
-
-//					Intent intent = new Intent(mContext, ScheduleEditActivity.class);
-//					intent.putExtra("CompanyID", oItem.getCompanyID());
-//					intent.putExtra("ExhibitorName", oItem.getCompanyName(SystemMethod.getCurLanguage(mContext)));
+//	private OnItemClickListener mItemClickListener = new OnItemClickListener() {
+//		@Override
+//		public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+////			clsExhibitor oItem = mExhibitorAdapter.getItem(position);
+//
+//			// SystemMethod.trackLogJson(mContext, 100, "page",
+//			// oItem.getCompanyNameEN(), null);
+//
+//			if (oItem != null) {
+//				if (mAddSchedule) {
+//
+//					LogUtil.i(TAG, "mAddSchedule: setResult(Activity.RESULT_OK");
+//
+////					Intent intent = new Intent(mContext, ScheduleEditActivity.class);
+////					intent.putExtra("CompanyID", oItem.getCompanyID());
+////					intent.putExtra("ExhibitorName", oItem.getCompanyName(SystemMethod.getCurLanguage(mContext)));
+////					intent.putExtra("currentItem", currentItem);
+////					startActivity(intent);
+////					Activity oActivity = getActivity();
+////					oActivity.setResult(Activity.RESULT_OK, intent);
+////					oActivity.finish();
+//				} else {
+//
+//					LogUtil.i(TAG, "Intent: ExhibitorDetailActivity");
+//
+//					Intent intent = new Intent(mContext, ExhibitorDetailActivity.class);
+//					intent.putExtra("Exhibitor", oItem);
 //					intent.putExtra("currentItem", currentItem);
 //					startActivity(intent);
-//					Activity oActivity = getActivity();
-//					oActivity.setResult(Activity.RESULT_OK, intent);
-//					oActivity.finish();
-				} else {
-
-					LogUtil.i(TAG, "Intent: ExhibitorDetailActivity");
-
-					Intent intent = new Intent(mContext, ExhibitorDetailActivity.class);
-					intent.putExtra("Exhibitor", oItem);
-					intent.putExtra("currentItem", currentItem);
-					startActivity(intent);
-				}
-				if (SystemMethod.getSharedPreferences(mContext, "DeviceType").equals("Pad")) {
-					((Activity) mContext).overridePendingTransition(R.animator.fade_in, R.animator.fade_out);
-				}
-
-			}
-		}
-	};
+//				}
+//				if (SystemMethod.getSharedPreferences(mContext, "DeviceType").equals("Pad")) {
+//					((Activity) mContext).overridePendingTransition(R.animator.fade_in, R.animator.fade_out);
+//				}
+//
+//			}
+//		}
+//	};
 
 }

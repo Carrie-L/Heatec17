@@ -1,9 +1,5 @@
 [
     {
-        "merged": "E:\\AndroidStudioProjects\\Heatec17\\lib20\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\common_google_signin_btn_text_dark.xml",
-        "source": "C:\\Users\\Carrie\\.android\\build-cache\\5f42a2b2c8275b7cc898dcc29334ec8b96c2b4b8\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
-    },
-    {
         "merged": "E:\\studio_workspace\\Heatec17\\lib20\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\common_google_signin_btn_text_dark.xml",
         "source": "C:\\Users\\new\\.android\\build-cache\\be5f261c152e72ed5556adccd58dd6c5fd33f203\\output\\res\\color\\common_google_signin_btn_text_dark.xml"
     },
@@ -12,15 +8,7 @@
         "source": "C:\\Users\\new\\.android\\build-cache\\be5f261c152e72ed5556adccd58dd6c5fd33f203\\output\\res\\color\\common_google_signin_btn_tint.xml"
     },
     {
-        "merged": "E:\\AndroidStudioProjects\\Heatec17\\lib20\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\common_google_signin_btn_tint.xml",
-        "source": "C:\\Users\\Carrie\\.android\\build-cache\\5f42a2b2c8275b7cc898dcc29334ec8b96c2b4b8\\output\\res\\color\\common_google_signin_btn_tint.xml"
-    },
-    {
         "merged": "E:\\studio_workspace\\Heatec17\\lib20\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\common_google_signin_btn_text_light.xml",
         "source": "C:\\Users\\new\\.android\\build-cache\\be5f261c152e72ed5556adccd58dd6c5fd33f203\\output\\res\\color\\common_google_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudioProjects\\Heatec17\\lib20\\build\\intermediates\\res\\merged\\androidTest\\debug\\color\\common_google_signin_btn_text_light.xml",
-        "source": "C:\\Users\\Carrie\\.android\\build-cache\\5f42a2b2c8275b7cc898dcc29334ec8b96c2b4b8\\output\\res\\color\\common_google_signin_btn_text_light.xml"
     }
 ]
