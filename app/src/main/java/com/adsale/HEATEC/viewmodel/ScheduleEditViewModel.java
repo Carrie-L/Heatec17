@@ -32,6 +32,7 @@ public class ScheduleEditViewModel {
     private long mId;
     private ScheduleInfo mScheduleInfo;
     private String mCompanyId;
+    private OnBackListener mListener;
 
     public ScheduleEditViewModel(Context mContext, long mId) {
         this.mContext = mContext;
@@ -44,10 +45,9 @@ public class ScheduleEditViewModel {
         mCompanyId = companyId;
     }
 
-    public void initData() {
+    public void initData(OnBackListener listener) {
         etStartDate.set(getStartDate());
-
-
+        mListener=listener;
     }
 
     private String getStartDate() {
@@ -62,16 +62,27 @@ public class ScheduleEditViewModel {
 
     public void onDelete() {
         mRepository.deleteItemData(mId);
+        if(mListener!=null){
+            mListener.back(true);
+        }
     }
 
     /**
      * ScheduleInfo: [Long ScheduleID, String CompanyID, String Title, String Location, Integer Day_Index, String StartTime, Integer Length (use minute), Integer AllDay (use hour), String Note]
      */
     public void onSave() {
-        ScheduleInfo scheduleInfo = new ScheduleInfo(mId, mCompanyId, etTitle.get(), etLocation.get(), dateIndex.get(), etStartTime.get(), Integer.valueOf(etMinute.get()), Integer.valueOf(etHour.get()), "");
+        ScheduleInfo scheduleInfo = new ScheduleInfo(isEdit.get()?mId:null,mCompanyId, etTitle.get(), etLocation.get(), dateIndex.get(), etStartTime.get(), Integer.valueOf(etMinute.get()), Integer.valueOf(etHour.get()), "");
         LogUtil.i(TAG, "onSave::scheduleInfo= " + scheduleInfo.toString());
-        mRepository.insertItemData(scheduleInfo);
+        mRepository.insertOrReplaceItemData(scheduleInfo);
+        if(mListener!=null){
+            mListener.back(true);
+        }
     }
+
+    public interface OnBackListener{
+        void back(boolean change);
+    }
+
 
 
 }

@@ -1,8 +1,6 @@
 package com.adsale.HEATEC.activity;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Rect;
@@ -14,13 +12,10 @@ import android.support.v7.widget.GridLayoutManager.SpanSizeLookup;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ItemDecoration;
 import android.support.v7.widget.RecyclerView.State;
-import android.text.TextUtils;
 import android.view.View;
 
 import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.dao.MainIcon;
-import com.adsale.HEATEC.database.MapFloorDBHelper;
-import com.adsale.HEATEC.database.model.ftpInformation;
 import com.adsale.HEATEC.databinding.ActivityMainBinding;
 import com.adsale.HEATEC.util.LogUtil;
 import com.adsale.HEATEC.util.SystemMethod;
@@ -44,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements MainViewModel.OnM
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LogUtil.i(TAG,"============Main:onCreate======================");
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mModel = new MainViewModel(getApplicationContext(), this);
         binding.setMainModel(mModel);

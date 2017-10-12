@@ -124,7 +124,7 @@ public class MenuView extends RelativeLayout {
 		}
 
 		if (mainIcon.getIcon().contains("|")) {
-			if (SystemMethod.isPadDevice(mContext)) {
+			if (App.isTablet) {
 				mUrlBuilder.append(mainIcon.getIcon().split("\\|")[1]);
 			} else {
 				mUrlBuilder.append(mainIcon.getIcon().split("\\|")[0]);

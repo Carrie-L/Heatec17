@@ -70,6 +70,8 @@ public class LoadingActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        LogUtil.i(TAG,"--isTablet--="+isTablet);
+
         // baidu... init
         setupBaiDu();
         // 谷歌统计跟踪
@@ -90,9 +92,9 @@ public class LoadingActivity extends AppCompatActivity {
             isShowLang.set(true);
             getDeviceInfo();
         } else {
-            setRequestedOrientation();
             startDownload();
         }
+        setRequestedOrientation();
 
     }
 
@@ -325,7 +327,6 @@ public class LoadingActivity extends AppCompatActivity {
 
     private void getDeviceInfo() {
         requestPermission();
-        setupDeviceType();
         deviceSize();
     }
 
@@ -350,10 +351,6 @@ public class LoadingActivity extends AppCompatActivity {
 
         SharedPreferences sp = getSharedPreferences("ScreenSize", MODE_PRIVATE);
         sp.edit().putInt("ScreenWidth", width).putInt("ScreenHeight", height).apply();
-    }
-
-    private void setupDeviceType() {
-        setRequestedOrientation();
     }
 
     private void getDeviceId() {

@@ -6,17 +6,11 @@ import com.adsale.HEATEC.App;
 import com.adsale.HEATEC.dao.DBHelper;
 import com.adsale.HEATEC.dao.MainIcon;
 import com.adsale.HEATEC.dao.MainIconDao;
-import com.adsale.HEATEC.dao.MapFloor;
 import com.adsale.HEATEC.dao.MapFloorDao;
 import com.adsale.HEATEC.dao.ScheduleInfo;
 import com.adsale.HEATEC.dao.ScheduleInfoDao;
-import com.adsale.HEATEC.database.model.clsMainIcon;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import static android.R.id.list;
-import static com.adsale.HEATEC.R.drawable.date;
 
 /**
  * Created by Carrie on 2017/9/25.
@@ -65,10 +59,14 @@ public class DataRepository {
      * @return ArrayList
      */
     public ArrayList<ScheduleInfo> getDateSchedules(int dayIndex){
-        return (ArrayList<ScheduleInfo>) mScheduleInfoDao.queryBuilder().where(ScheduleInfoDao.Properties.Day_Index.eq(dayIndex)).list();
+        return (ArrayList<ScheduleInfo>) mScheduleInfoDao.queryBuilder().where(ScheduleInfoDao.Properties.DayIndex.eq(dayIndex)).list();
     }
 
     public void insertItemData(ScheduleInfo entity) {
+        mScheduleInfoDao.insert(entity);
+    }
+
+    public void insertOrReplaceItemData(ScheduleInfo entity) {
         mScheduleInfoDao.insertOrReplace(entity);
     }
 
@@ -85,7 +83,7 @@ public class DataRepository {
     }
 
     public boolean isSameTimeSchedule(int dayIndex,String startTime){
-        return !mScheduleInfoDao.queryBuilder().where(ScheduleInfoDao.Properties.Day_Index.eq(dayIndex),ScheduleInfoDao.Properties.StartTime.eq(startTime)).limit(1).list().isEmpty();
+        return !mScheduleInfoDao.queryBuilder().where(ScheduleInfoDao.Properties.DayIndex.eq(dayIndex),ScheduleInfoDao.Properties.StartTime.eq(startTime)).limit(1).list().isEmpty();
     }
 
 }

@@ -8,6 +8,7 @@ import android.databinding.ObservableBoolean;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 
+import com.adsale.HEATEC.App;
 import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.activity.ExhibitorActivity;
 import com.adsale.HEATEC.activity.MyExhibitorListActivity;
@@ -46,7 +47,6 @@ public class MainViewModel {
 
     private SimpleDraweeView mTopBG;
     private RecyclerView mRV;
-    private final boolean isPadDevice;
 
     private ftpInformation information;
     private Intent intent;
@@ -55,7 +55,6 @@ public class MainViewModel {
         this.mContext = mContext;
         this.mCallback = callback;
         mDataRepository = DataRepository.getInstance(mContext);
-        isPadDevice = SystemMethod.isPadDevice(mContext);
         mLanguage = SystemMethod.getCurLanguage(mContext);
     }
 
@@ -111,7 +110,7 @@ public class MainViewModel {
 
     public void refreshView() {
         mTopBG.setImageDrawable(mContext.getResources().getDrawable(R.drawable.main_banner));
-        if (isPadDevice) {
+        if (App.isTablet) {
             setPadAdapter();
         } else {
             setAdapter();

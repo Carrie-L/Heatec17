@@ -8,12 +8,12 @@ import android.graphics.Typeface;
 import android.text.Layout.Alignment;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.util.Log;
 
 import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.dao.MainIcon;
-import com.adsale.HEATEC.database.model.clsMainIcon;
 import com.facebook.imagepipeline.request.BaseRepeatedPostProcessor;
+
+import static com.adsale.HEATEC.App.isTablet;
 
 /**
  * 在Icon上添加文字标题
@@ -52,7 +52,7 @@ public class TextMeshPostProcessor extends BaseRepeatedPostProcessor {
 		
 		LogUtil.i(TAG, "entity.getGoogle_TJ()="+entity.getGoogle_TJ());
 
-		if(SystemMethod.isPadDevice(context)){
+		if(isTablet){
 			setTextColor(mEntity.getGoogle_TJ().split("\\|")[1]);
 		}else{
 			setTextColor(mEntity.getGoogle_TJ().split("\\|")[0]);

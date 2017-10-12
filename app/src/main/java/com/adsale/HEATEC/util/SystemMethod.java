@@ -286,8 +286,7 @@ public class SystemMethod {
     }
 
     public static void setLocaleLanguage(Context context) {
-        if (SystemMethod.isPadDevice(context)) {
-
+        if (App.isTablet) {
             int language = SystemMethod.getCurLanguage(context);
             LogUtil.e(TAG, "setLocaleLanguage: language=" + language + ",Locale= " + getLocale(context));
             SystemMethod.switchLanguage(context, language);
@@ -318,11 +317,6 @@ public class SystemMethod {
             }
         }
         return pSource;
-    }
-
-    public static boolean isPadDevice(Context c) {
-        return !SystemMethod.getSharedPreferences(c, "DeviceType").equals(
-                "Phone");
     }
 
     /**

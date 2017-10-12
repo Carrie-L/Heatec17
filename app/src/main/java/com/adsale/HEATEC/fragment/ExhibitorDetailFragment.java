@@ -16,18 +16,16 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.adsale.HEATEC.App;
 import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.base.BaseFragment;
 import com.adsale.HEATEC.database.ExhibitorDBHelper;
 import com.adsale.HEATEC.database.model.clsExhibitor;
 import com.adsale.HEATEC.database.model.clsScheduleInfo;
-import com.adsale.HEATEC.util.LogUtil;
 import com.adsale.HEATEC.util.SystemMethod;
 import com.adsale.HEATEC.view.ExhibitorDtlView;
 import com.adsale.HEATEC.view.NoteView;
 import com.adsale.HEATEC.view.ScheduleInfoView;
-
-import static com.adsale.HEATEC.R.id.ScheduleFragment;
 
 public class ExhibitorDetailFragment extends BaseFragment {
 	public static final String TAG = "ExhibitorDetailFragment";
@@ -211,7 +209,7 @@ public class ExhibitorDetailFragment extends BaseFragment {
 			clsScheduleInfo oClsScheduleInfo = (clsScheduleInfo) parent.getAdapter().getItem(position);
 
 			if (oClsScheduleInfo != null) {
-				if (!SystemMethod.isPadDevice(mContext)) {
+				if (!App.isTablet) {
 //					Intent intent = new Intent(mContext, ScheduleEditActivity.class);
 //					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //					intent.putExtra("ExhibitorName", mclsExhibitor.getCompanyName(mCurLanguage));

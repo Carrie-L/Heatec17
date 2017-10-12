@@ -3,7 +3,6 @@ package com.adsale.HEATEC.data;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-
 import com.adsale.HEATEC.App;
 import com.adsale.HEATEC.dao.Exhibitor;
 import com.adsale.HEATEC.dao.ExhibitorDao;
@@ -73,7 +72,7 @@ public class LoadRepository {
         return isFirstGetMaster && list.size() > 0;
     }
 
-    private <T> void insertAll(ArrayList<T> list, AbstractDao<T, String> dao, String maxUT) {
+    private <T> void insertAll(ArrayList<T> list, AbstractDao<T, String> dao) {
         if (list.size() == 0) {
             return;
         }
@@ -83,10 +82,15 @@ public class LoadRepository {
             dao.deleteAll();
         }
         dao.insertOrReplaceInTx(list);
-        LogUtil.i(TAG, "insertAll：" + dao.getTablename()+(System.currentTimeMillis() - startTime) + "ms");
-        mSP_lut.edit().putString(dao.getTablename(), maxUT).apply();
+        LogUtil.i(TAG, "insertAll：" + dao.getTablename() + (System.currentTimeMillis() - startTime) + "ms");
 
-        UpdateDate updateDate = new UpdateDate(dao.getTablename(), maxUT);
+
+    }
+
+    private void updateDate(String table, String maxUT) {
+        mSP_lut.edit().putString(table, maxUT).apply();
+
+        UpdateDate updateDate = new UpdateDate(table, maxUT);
         mUpdateDateDao.insertOrReplaceInTx(updateDate);
     }
 
@@ -94,63 +98,72 @@ public class LoadRepository {
         if (list.size() == 0) {
             return;
         }
-        insertAll(list, mMainIconDao, getMaxUT(MainIconDao.Properties.UpdateDateTime, mMainIconDao).getUpdateDateTime());
+        insertAll(list, mMainIconDao);
+        updateDate(mMainIconDao.getTablename(), getMaxUT(MainIconDao.Properties.UpdateDateTime, mMainIconDao).getUpdateDateTime());
     }
 
     public void insertNewsAll(ArrayList<News> list) {
         if (list.size() == 0) {
             return;
         }
-        insertAll(list, mNewsDao, getMaxUT(NewsDao.Properties.UpdateDateTime, mNewsDao).getUpdateDateTime());
+        insertAll(list, mNewsDao);
+        updateDate(mNewsDao.getTablename(), getMaxUT(NewsDao.Properties.UpdateDateTime, mNewsDao).getUpdateDateTime());
     }
 
     public void insertNewsLinkAll(ArrayList<NewsLink> list) {
         if (list.size() == 0) {
             return;
         }
-        insertAll(list, mNewsLinkDao, getMaxUT(NewsLinkDao.Properties.UpdateDateTime, mNewsLinkDao).getUpdateDateTime());
+        insertAll(list, mNewsLinkDao);
+        updateDate(mNewsLinkDao.getTablename(), getMaxUT(NewsLinkDao.Properties.UpdateDateTime, mNewsLinkDao).getUpdateDateTime());
     }
 
     public void insertWebContentAll(ArrayList<WebContent> list) {
         if (list.size() == 0) {
             return;
         }
-        insertAll(list, mWebContentDao,getMaxUT(WebContentDao.Properties.UpdateDateTime, mWebContentDao).getUpdateDateTime());
+        insertAll(list, mWebContentDao);
+        updateDate(mWebContentDao.getTablename(), getMaxUT(WebContentDao.Properties.UpdateDateTime, mWebContentDao).getUpdateDateTime());
     }
 
     public void insertMapFloorAll(ArrayList<MapFloor> list) {
         if (list.size() == 0) {
             return;
         }
-        insertAll(list, mMapFloorDao, getMaxUT(MapFloorDao.Properties.UpdateDateTime, mMapFloorDao).getUpdateDateTime());
+        insertAll(list, mMapFloorDao);
+        updateDate(mMainIconDao.getTablename(), getMaxUT(MapFloorDao.Properties.UpdateDateTime, mMapFloorDao).getUpdateDateTime());
     }
 
     public void insertExhibitorAll(ArrayList<Exhibitor> list) {
         if (list.size() == 0) {
             return;
         }
-        insertAll(list, mExhibitorDao, getMaxUT(ExhibitorDao.Properties.UpdateDateTime, mExhibitorDao).getUpdateDateTime());
+        insertAll(list, mExhibitorDao);
+        updateDate(mExhibitorDao.getTablename(), getMaxUT(ExhibitorDao.Properties.UpdateDateTime, mExhibitorDao).getUpdateDateTime());
     }
 
     public void insertIndustryDtlAll(ArrayList<ExhibitorIndustryDtl> list) {
         if (list.size() == 0) {
             return;
         }
-        insertAll(list, mIndustryDtlDao, getMaxUT(ExhibitorIndustryDtlDao.Properties.UpdateDateTime, mIndustryDtlDao).getUpdateDateTime());
+        insertAll(list, mIndustryDtlDao);
+        updateDate(mIndustryDtlDao.getTablename(), getMaxUT(ExhibitorIndustryDtlDao.Properties.UpdateDateTime, mIndustryDtlDao).getUpdateDateTime());
     }
 
     public void insertIndustryAll(ArrayList<Industry> list) {
         if (list.size() == 0) {
             return;
         }
-        insertAll(list, mIndustryDao, getMaxUT(IndustryDao.Properties.UpdateDateTime, mIndustryDao).getUpdateDateTime());
+        insertAll(list, mIndustryDao);
+        updateDate(mIndustryDao.getTablename(), getMaxUT(IndustryDao.Properties.UpdateDateTime, mIndustryDao).getUpdateDateTime());
     }
 
     public void insertFloorAll(ArrayList<Floor> list) {
         if (list.size() == 0) {
             return;
         }
-        insertAll(list, mFloorDao, getMaxUT(FloorDao.Properties.UpdateDateTime, mFloorDao).getUpdateDateTime());
+        insertAll(list, mFloorDao);
+        updateDate(mFloorDao.getTablename(), getMaxUT(FloorDao.Properties.UpdateDateTime, mFloorDao).getUpdateDateTime());
     }
 
     /**

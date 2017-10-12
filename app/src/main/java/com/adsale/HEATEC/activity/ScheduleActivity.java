@@ -19,9 +19,14 @@ import com.adsale.HEATEC.viewmodel.ScheduleViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-import m.framework.utils.Data;
-
-
+/**
+ * todo
+ * 每个页面显示单独的数据
+ * item click
+ * 列表界面正常显示
+ * circle btn click event
+ *
+ */
 public class ScheduleActivity extends BaseActivity {
 
     private ScheduleViewModel mScheduleModel;
@@ -94,5 +99,13 @@ public class ScheduleActivity extends BaseActivity {
         }
     };
 
+    @Override
+    protected void onResume() {
+        super.onResume();
 
+        viewPager.setCurrentItem(mScheduleModel.dateIndex.get());
+        mScheduleModel.onStart(mScheduleModel.dateIndex.get());
+
+
+    }
 }

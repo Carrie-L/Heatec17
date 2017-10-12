@@ -13,11 +13,12 @@ import android.os.Parcelable;
  */
 public class ScheduleInfo implements Parcelable {
 
+
     private Long ScheduleID;
     private String CompanyID;
     private String Title;
     private String Location;
-    private Integer Day_Index;
+    private Integer DayIndex;
     private String StartTime;
     private Integer Hour;
     private Integer Minute;
@@ -33,12 +34,12 @@ public class ScheduleInfo implements Parcelable {
         this.ScheduleID = ScheduleID;
     }
 
-    public ScheduleInfo(Long ScheduleID, String CompanyID, String Title, String Location, Integer Day_Index, String StartTime, Integer Hour, Integer Minute, String Note) {
+    public ScheduleInfo(Long ScheduleID, String CompanyID, String Title, String Location, Integer DayIndex, String StartTime, Integer Hour, Integer Minute, String Note) {
         this.ScheduleID = ScheduleID;
         this.CompanyID = CompanyID;
         this.Title = Title;
         this.Location = Location;
-        this.Day_Index = Day_Index;
+        this.DayIndex = DayIndex;
         this.StartTime = StartTime;
         this.Hour = Hour;
         this.Minute = Minute;
@@ -77,12 +78,12 @@ public class ScheduleInfo implements Parcelable {
         this.Location = Location;
     }
 
-    public Integer getDay_Index() {
-        return Day_Index;
+    public Integer getDayIndex() {
+        return DayIndex;
     }
 
-    public void setDay_Index(Integer Day_Index) {
-        this.Day_Index = Day_Index;
+    public void setDayIndex(Integer DayIndex) {
+        this.DayIndex = DayIndex;
     }
 
     public String getStartTime() {
@@ -118,6 +119,16 @@ public class ScheduleInfo implements Parcelable {
     }
 
     // KEEP METHODS - put your custom methods here
+    public ScheduleInfo(String CompanyID, String Title, String Location, Integer DayIndex, String StartTime, Integer Hour, Integer Minute, String Note) {
+        this.CompanyID = CompanyID;
+        this.Title = Title;
+        this.Location = Location;
+        this.DayIndex = DayIndex;
+        this.StartTime = StartTime;
+        this.Hour = Hour;
+        this.Minute = Minute;
+        this.Note = Note;
+    }
 
     @Override
     public String toString() {
@@ -126,7 +137,7 @@ public class ScheduleInfo implements Parcelable {
                 ", CompanyID='" + CompanyID + '\'' +
                 ", Title='" + Title + '\'' +
                 ", Location='" + Location + '\'' +
-                ", Day_Index=" + Day_Index +
+                ", DayIndex=" + DayIndex +
                 ", StartTime='" + StartTime + '\'' +
                 ", Hour=" + Hour +
                 ", Minute=" + Minute +
@@ -146,7 +157,7 @@ public class ScheduleInfo implements Parcelable {
         dest.writeString(this.CompanyID);
         dest.writeString(this.Title);
         dest.writeString(this.Location);
-        dest.writeValue(this.Day_Index);
+        dest.writeValue(this.DayIndex);
         dest.writeString(this.StartTime);
         dest.writeValue(this.Hour);
         dest.writeValue(this.Minute);
@@ -158,7 +169,7 @@ public class ScheduleInfo implements Parcelable {
         this.CompanyID = in.readString();
         this.Title = in.readString();
         this.Location = in.readString();
-        this.Day_Index = (Integer) in.readValue(Integer.class.getClassLoader());
+        this.DayIndex = (Integer) in.readValue(Integer.class.getClassLoader());
         this.StartTime = in.readString();
         this.Hour = (Integer) in.readValue(Integer.class.getClassLoader());
         this.Minute = (Integer) in.readValue(Integer.class.getClassLoader());

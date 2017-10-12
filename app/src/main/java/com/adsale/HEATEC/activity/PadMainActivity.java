@@ -1,7 +1,5 @@
 package com.adsale.HEATEC.activity;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
@@ -12,8 +10,6 @@ import android.content.pm.ActivityInfo;
 import android.databinding.DataBindingUtil;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,7 +21,6 @@ import android.widget.RelativeLayout.LayoutParams;
 
 import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.dao.MainIcon;
-import com.adsale.HEATEC.database.model.ftpInformation;
 import com.adsale.HEATEC.databinding.PadActivityMainBinding;
 import com.adsale.HEATEC.util.LogUtil;
 import com.adsale.HEATEC.util.SystemMethod;
@@ -33,6 +28,8 @@ import com.adsale.HEATEC.util.network.Configure;
 import com.adsale.HEATEC.view.MenuView;
 import com.adsale.HEATEC.viewmodel.MainViewModel;
 import com.facebook.drawee.view.SimpleDraweeView;
+
+import java.util.ArrayList;
 
 public class PadMainActivity extends AppCompatActivity implements MainViewModel.OnMainIntentCallback {
     protected static final String TAG = "PadMainActivity";
@@ -65,6 +62,7 @@ public class PadMainActivity extends AppCompatActivity implements MainViewModel.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        LogUtil.i(TAG,"============PadMain:onCreate======================");
         binding = DataBindingUtil.setContentView(this, R.layout.pad_activity_main);
         mModel = new MainViewModel(getApplicationContext(), this);
         binding.setMainModel(mModel);

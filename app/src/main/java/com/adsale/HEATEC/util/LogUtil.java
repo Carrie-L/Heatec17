@@ -11,7 +11,7 @@ import android.util.Log;
 
 public class LogUtil {
 	/**true : 打印Log ; false :不打印*/
-	private static final String PREFIX="Heatec:";
+	private static final String PREFIX="Heatec17:";
 	public static final boolean LOG=true;
 
 	public static void v(String tag,String msg){

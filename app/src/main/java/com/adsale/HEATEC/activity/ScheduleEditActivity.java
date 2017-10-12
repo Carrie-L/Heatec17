@@ -1,16 +1,9 @@
 package com.adsale.HEATEC.activity;
 
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
-import android.text.TextUtils;
-
-import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.base.BaseActivity;
 import com.adsale.HEATEC.dao.Exhibitor;
 import com.adsale.HEATEC.databinding.ActivityScheduleEditBinding;
 import com.adsale.HEATEC.util.Constant;
-import com.adsale.HEATEC.util.LogUtil;
 import com.adsale.HEATEC.util.SystemMethod;
 import com.adsale.HEATEC.viewmodel.ScheduleEditViewModel;
 
@@ -19,7 +12,7 @@ import com.adsale.HEATEC.viewmodel.ScheduleEditViewModel;
  * add: [Constant.INTENT_EXHIBITOR]
  * edit: [id] [Constant.INTENT_EXHIBITOR] [Constant.INTENT_DATE_INDEX]
  */
-public class ScheduleEditActivity extends BaseActivity {
+public class ScheduleEditActivity extends BaseActivity implements ScheduleEditViewModel.OnBackListener{
 
     private ScheduleEditViewModel mEditModel;
     private int language;
@@ -48,13 +41,15 @@ public class ScheduleEditActivity extends BaseActivity {
             mEditModel.etLocation.set(exhibitor.getExhibitorNO());
             mEditModel.etNote.set(exhibitor.getNote());
         }
-        mEditModel.initData();
+        mEditModel.initData(this);
 
 
 
     }
 
 
-
-
+    @Override
+    public void back(boolean change) {
+        finish();
+    }
 }

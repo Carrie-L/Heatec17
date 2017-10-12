@@ -12,11 +12,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,6 +20,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.adsale.HEATEC.App;
 import com.adsale.HEATEC.R;
 import com.adsale.HEATEC.activity.SettingActivity;
 import com.adsale.HEATEC.activity.WebContentActivity;
@@ -32,7 +29,6 @@ import com.adsale.HEATEC.base.BaseFragment;
 import com.adsale.HEATEC.dao.MainIcon;
 import com.adsale.HEATEC.database.ExhibitorDBHelper;
 import com.adsale.HEATEC.database.ScheduleInfoDBHelper;
-import com.adsale.HEATEC.database.model.clsMainIcon;
 import com.adsale.HEATEC.util.DialogUtil;
 import com.adsale.HEATEC.util.LogUtil;
 import com.adsale.HEATEC.util.PermissionUtil;
@@ -91,7 +87,7 @@ public class SettingPadFragment extends BaseFragment {
     private void setupView() {
 
 
-        if (SystemMethod.isPadDevice(mContext)) {
+        if (App.isTablet) {
             setPadList();
             mListView.setOnItemClickListener(itemPadClickListener);
             mIconList = new Integer[]{R.drawable.set_01, R.drawable.set_02, R.drawable.set_03, R.drawable.set_04, R.drawable.set_05};
