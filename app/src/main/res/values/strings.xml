@@ -202,7 +202,7 @@
     <string name="ask_clear">你想重置所有資料為預設值嗎？</string>
     <string name="yes">是</string>
     <string name="no">否</string>
-    <string name="ScheduleInfo_lable">議程%1$s:</string>
+    <string name="ScheduleInfo_lable">議程%d:</string>
     <string name="ScheduleInfo_startTime">時間:%1$s</string>
 
     <!--  -->

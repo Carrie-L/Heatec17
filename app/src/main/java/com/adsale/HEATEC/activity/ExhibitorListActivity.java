@@ -13,7 +13,6 @@ import com.adsale.HEATEC.base.BaseActivity;
 import com.adsale.HEATEC.dao.Exhibitor;
 import com.adsale.HEATEC.data.ExhibitorRepository;
 import com.adsale.HEATEC.databinding.ActivityExhibitorsBinding;
-import com.adsale.HEATEC.util.Constant;
 import com.adsale.HEATEC.util.RecyclerItemClickListener;
 import com.adsale.HEATEC.util.SystemMethod;
 import com.adsale.HEATEC.view.SideLetter;
@@ -49,7 +48,7 @@ public class ExhibitorListActivity extends BaseActivity {
         mExhibitorModel = new ExhibitorListViewModel(getApplicationContext(), repository);
         binding.setExhibitorModel(mExhibitorModel);
 
-        dateIndex = getIntent().getIntExtra(INTENT_DATE_INDEX, 0);
+        dateIndex = getIntent().getIntExtra(INTENT_DATE_INDEX, -1);
 
         initExhibitorList();
         initSideLetterList();
@@ -87,12 +86,17 @@ public class ExhibitorListActivity extends BaseActivity {
 
             @Override
             public void onItemClick(View view, int position) {
-                if (dateIndex!=-1) {
-                    Intent intent = new Intent(ExhibitorListActivity.this,ScheduleEditActivity.class);
+                if (dateIndex != -1) {
+                    Intent intent = new Intent(ExhibitorListActivity.this, ScheduleEditActivity.class);
                     intent.putExtra(INTENT_EXHIBITOR, mExhibitorModel.exhibitors.get(position));
-                    intent.putExtra(INTENT_DATE_INDEX,dateIndex);
+                    intent.putExtra(INTENT_DATE_INDEX, dateIndex);
                     startActivity(intent);
                     finish();
+                } else {
+                    Intent intent = new Intent(ExhibitorListActivity.this, ExhibitorDetailActivity.class);
+                    intent.putExtra(INTENT_EXHIBITOR, mExhibitorModel.exhibitors.get(position));
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
                 }
 
             }
@@ -121,7 +125,6 @@ public class ExhibitorListActivity extends BaseActivity {
             }
         });
     }
-
 
 
 }

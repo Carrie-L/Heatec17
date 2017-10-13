@@ -117,7 +117,7 @@
     <string name="not_title">标题不能为空</string>
 
     <!--  -->
-    <string name="ScheduleInfo_lable">议程%1$s:</string>
+    <string name="ScheduleInfo_lable">议程%d:</string>
     <string name="ScheduleInfo_startTime">时间:%1$s</string>
 
     <!--  -->

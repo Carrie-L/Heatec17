@@ -69,7 +69,7 @@
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/btnDate02"
             android:gravity="center"
-            android:text="@{Constant.SCHEDULE_DAY2}"
+            android:text="@{Constant.SCHEDULE_DAY_END}"
             android:textSize="16sp"
             app:circle="@{model.dateIndex==2}"
             android:onClick="@{()->model.onDateClick(2)}"

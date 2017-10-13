@@ -1234,5 +1234,57 @@ public class SystemMethod {
         return retrofit.create(cls);
     }
 
+    /**
+     * 24小时制 转化成 上午下午制 [yyyy-MM-dd HH:mm -> yyyy-MM-dd hh:mm a]
+     */
+    public static String formatStartTime(String time) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm a", Locale.getDefault());
+        try {
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+            Date date = sdf1.parse(time);
+            time = sdf.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        LogUtil.i(TAG, "formatStartTime::time==" + time);
+        return time;
+    }
+
+    /**
+     * 上午下午制 转化成 24小时制 [yyyy-MM-dd hh:mm a -> yyyy-MM-dd HH:mm ]
+     */
+    public static String reformatStartTime(String time) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+        try {
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd hh:mm a", Locale.getDefault());
+            Date date = sdf1.parse(time);
+            time = sdf.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        LogUtil.i(TAG, "reformatStartTime::time==" + time);
+        return time;
+    }
+
+    public static String dateToString(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        return sdf.format(date);
+    }
+
+    public static String timeToString(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        return sdf.format(date);
+    }
+
+    public static Date stringToDate(String time){
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
+        try {
+            return sdf.parse(time);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return new Date();
+    }
+
 
 }

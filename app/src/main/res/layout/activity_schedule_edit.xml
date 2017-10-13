@@ -31,8 +31,7 @@
             android:layout_marginLeft="3dp"
             android:layout_toRightOf="@+id/iv_title"
             android:gravity="center_vertical"
-            android:text="@string/title"
-            android:textColor="@color/grey_font" />
+            android:text="@string/title" />
 
         <EditText
             android:id="@+id/editTitle"
@@ -60,8 +59,7 @@
             android:layout_marginLeft="3dp"
             android:layout_toRightOf="@+id/iv_location"
             android:gravity="center_vertical"
-            android:text="@string/location"
-            android:textColor="@color/grey_font" />
+            android:text="@string/location" />
 
         <EditText
             android:id="@+id/editLocation"
@@ -91,8 +89,7 @@
             android:layout_marginLeft="3dp"
             android:layout_toRightOf="@+id/iv_start_time"
             android:gravity="center_vertical"
-            android:text="@string/startTime"
-            android:textColor="@color/grey_font" />
+            android:text="@string/startTime" />
 
         <EditText
             android:id="@+id/editStartDate"
@@ -109,6 +106,7 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:singleLine="true"
+            android:onClick="@{model::onDateClick}"
             android:text="@={model.etStartDate}" />
 
         <EditText
@@ -124,8 +122,8 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             android:singleLine="true"
+            android:onClick="@{model::onTimeClick}"
             android:text="@={model.etStartTime}" />
-
 
         <ImageView
             android:id="@+id/iv_length"
@@ -142,8 +140,7 @@
             android:layout_marginLeft="3dp"
             android:layout_toRightOf="@+id/iv_length"
             android:gravity="center_vertical"
-            android:text="@string/length"
-            android:textColor="@color/grey_font" />
+            android:text="@string/length" />
 
 
         <EditText
@@ -165,8 +162,7 @@
             android:layout_alignTop="@+id/editHour"
             android:layout_toRightOf="@+id/editHour"
             android:gravity="center"
-            android:text="@string/hour"
-            android:textColor="@color/grey_font" />
+            android:text="@string/hour" />
 
         <EditText
             android:id="@+id/editMinute"
@@ -188,9 +184,7 @@
             android:layout_marginLeft="10dp"
             android:layout_toRightOf="@+id/editMinute"
             android:gravity="center"
-            android:text="@string/minute"
-            android:textColor="@color/grey_font" />
-
+            android:text="@string/minute" />
 
         <RelativeLayout
             android:layout_width="match_parent"

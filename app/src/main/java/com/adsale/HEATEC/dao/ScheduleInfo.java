@@ -8,6 +8,16 @@ package com.adsale.HEATEC.dao;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.adsale.HEATEC.util.Constant;
+import com.adsale.HEATEC.util.LogUtil;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import static com.adsale.HEATEC.util.Constant.SCHEDULE_MONTH;
+
 /**
  * Entity mapped to table "SCHEDULE_INFO".
  */
@@ -25,6 +35,8 @@ public class ScheduleInfo implements Parcelable {
     private String Note;
 
     // KEEP FIELDS - put your custom fields here
+    private String StartDateTime;
+    public Integer position;
     // KEEP FIELDS END
 
     public ScheduleInfo() {
@@ -143,6 +155,29 @@ public class ScheduleInfo implements Parcelable {
                 ", Minute=" + Minute +
                 ", Note='" + Note + '\'' +
                 '}';
+    }
+
+    public String getStartDateTime(int dateIndex, String startTime) {
+        String time;
+        if (dateIndex == 0) {
+            time = Constant.SCHEDULE_MONTH.concat("-").concat(Constant.SCHEDULE_DAY0).concat(" ").concat(startTime);
+        } else if (dateIndex == 1) {
+            time = SCHEDULE_MONTH.concat("-").concat(Constant.SCHEDULE_DAY1).concat(" ").concat(startTime);
+        } else {
+            time = SCHEDULE_MONTH.concat("-").concat(Constant.SCHEDULE_DAY_END).concat(" ").concat(startTime);
+        }
+        //// TODO: 2017/10/13 直接把这部分在save时加入数据库， starttime = 09:00 AM 
+        LogUtil.i("getStartDateTime", "TIME=" + time);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm a", Locale.getDefault());
+        try {
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+            Date date=sdf1.parse(time);
+            time = sdf.format(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        LogUtil.i("getStartDateTime", "time==" + time);
+        return time;
     }
     // KEEP METHODS END
 

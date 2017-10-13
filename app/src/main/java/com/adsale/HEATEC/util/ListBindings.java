@@ -61,6 +61,7 @@ public class ListBindings {
         tv.setTextColor(currItem ? tv.getResources().getColor(R.color.white) : tv.getResources().getColor(R.color.black));
     }
 
+
     /**
      * {@link TextViewBindingAdapter}  仿照setText()方法，避免死循环绑定
      *
